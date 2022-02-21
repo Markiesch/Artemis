@@ -1,22 +1,19 @@
 <template>
   <Navigation />
-  <router-view />
+  <main>
+    <router-view />
+  </main>
 </template>
 
 <script setup lang="ts">
 import Navigation from "./components/Navigation.vue";
 </script>
 
-<style lang="scss">
+<style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-
-body {
-  padding: 5rem;
-  text-align: center;
 }
 </style>
