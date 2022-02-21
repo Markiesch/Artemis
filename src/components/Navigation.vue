@@ -15,6 +15,8 @@
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: var(--nav-height);
 
   .link--container {
     a {
