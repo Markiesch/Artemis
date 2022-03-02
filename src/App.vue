@@ -22,6 +22,7 @@ window.addEventListener("scroll", updateScroll);
 <style lang="scss">
 :root {
   --primary-color: #eb7252;
+  --primary-accent-color: hsla(13, 79%, 62%, 0.2);
   --secondary-color: #144739;
   --text-color: hsla(0, 0%, 0%, 0.7);
   --nav-height: 5rem;
