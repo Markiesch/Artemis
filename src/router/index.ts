@@ -13,8 +13,18 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/nieuws/:id",
+    name: "Article",
+    component: () => import("../views/nieuws.vue"),
+  },
+  {
+    path: "/nieuws",
     name: "Nieuws",
     component: () => import("../views/nieuws.vue"),
+  },
+  {
+    path: "/overzicht",
+    name: "Overzicht",
+    component: () => import("../views/Overzicht.vue"),
   },
 ];
 
