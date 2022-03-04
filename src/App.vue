@@ -1,4 +1,5 @@
 <template>
+  <div class="background"></div>
   <Navigation />
   <main>
     <router-view />
@@ -7,27 +8,10 @@
 
 <script setup lang="ts">
 import Navigation from "./components/Navigation.vue";
-
-const root = document.documentElement;
-
-function updateScroll() {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;
-  root.style.setProperty("--scroll", -scrollTop + "px");
-}
-
-updateScroll();
-window.addEventListener("scroll", updateScroll);
 </script>
 
 <style lang="scss">
-:root {
-  --primary-color: #eb7252;
-  --primary-accent-color: hsla(13, 79%, 62%, 0.2);
-  --secondary-color: #144739;
-  --text-color: hsla(0, 0%, 0%, 0.7);
-  --nav-height: 5rem;
-  --scroll: 0;
-}
+@import "./styles/variables.scss";
 
 * {
   margin: 0;
@@ -46,5 +30,15 @@ section {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient($primary-accent-color, transparent);
 }
 </style>
