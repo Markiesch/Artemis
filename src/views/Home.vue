@@ -1,14 +1,14 @@
 <template>
-  <div class="hero--wrapper">
-    <section class="hero">
-      <article>
-        <h1>Geen enkel dier is overbodig</h1>
-        <p>Ieder dier in nood is welkom in onze opvang. Wij vinden dat ieder dier geholpen moet worden, ongeacht waar het dier geboren is, een ziekte of handicap heeft.</p>
-        <router-link :to="{ name: 'Home' }">Verander nu een leven</router-link>
-      </article>
-    </section>
-    <img src="../assets/hero.png" />
-  </div>
+  <section class="hero">
+    <article>
+      <h1>Geen enkel dier is overbodig</h1>
+      <p>Ieder dier in nood is welkom in onze opvang. Wij vinden dat ieder dier geholpen moet worden, ongeacht waar het dier geboren is, een ziekte of handicap heeft.</p>
+      <router-link :to="{ name: 'Home' }">Verander nu een leven</router-link>
+    </article>
+    <article>
+      <img src="assets/hero.png" alt="Hero" />
+    </article>
+  </section>
 
   <section class="donate--section">
     <article class="donate--information">
@@ -27,7 +27,9 @@
     </article>
   </section>
 
-  <Slider></Slider>
+  <section>
+    <Slider></Slider>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -37,32 +39,39 @@ let donateCounter = ref(45);
 </script>
 
 <style lang="scss">
+@import "../styles/variables.scss";
+
+.hero--gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .hero {
-  padding-top: var(--nav-height);
-  padding-bottom: var(--nav-height);
+  min-height: calc(100vh - $nav-height);
+  padding-bottom: $nav-height;
   display: flex;
   align-items: center;
-  min-height: 100vh;
 
-  &--wrapper {
-    background-color: var(--primary-accent-color);
-    min-height: 100vh;
-    position: relative;
-
-    img {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      max-height: 95%;
-    }
+  article {
+    flex: 1 1 20rem;
   }
 
-  & > * {
-    max-width: 40rem;
+  article + article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 60%;
   }
 
   a {
-    color: var(--primary-color);
+    color: $primary-color;
   }
 
   h1 {
@@ -94,7 +103,7 @@ let donateCounter = ref(45);
 
   .donate--information {
     h2 {
-      color: var(--secondary-color);
+      color: $secondary-color;
       font-size: 3.5rem;
       line-height: 1.1;
       font-weight: 800;
@@ -110,12 +119,12 @@ let donateCounter = ref(45);
 
     .goal--container {
       width: 100%;
-      background-color: var(--primary-accent-color);
+      background-color: $primary-accent-color;
       border-radius: 0.25rem;
     }
 
     .current--container {
-      background-color: var(--primary-color);
+      background-color: $primary-color;
       width: 45%;
       padding: 0.25rem;
       border-radius: inherit;
@@ -126,7 +135,7 @@ let donateCounter = ref(45);
     }
 
     p {
-      color: var(--primary-color);
+      color: $primary-color;
       font-size: 5rem;
       font-weight: 700;
     }
