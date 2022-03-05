@@ -28,13 +28,24 @@
   </section>
 
   <section>
-    <Slider></Slider>
+    <Slider />
+  </section>
+
+  <section>
+    <NewsCard :id="articles[0].id" />
+    <NewsCard :id="articles[1].id" />
+    <NewsCard :id="articles[2].id" />
   </section>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import Slider from "../components/Slider.vue";
+import NewsCard from "../components/NewsCard.vue";
+import { articles } from "../data/articles";
+
+// const articles = articles;
+
 let donateCounter = ref(45);
 </script>
 
