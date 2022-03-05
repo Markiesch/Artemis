@@ -1,9 +1,10 @@
 <template>
-  <h2>Nieuwsartikel {{ id }}</h2>
+  <div v-for="article of articles">
+    <NewsCard :id="article.id" />
+  </div>
 </template>
 
 <script setup lang="ts">
-import router from "../router";
-
-const id = router.currentRoute.value.params.id;
+import { articles } from "../data/articles";
+import NewsCard from "../components/NewsCard.vue";
 </script>
