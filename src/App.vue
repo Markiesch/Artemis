@@ -12,7 +12,9 @@ import Footer from "./components/Footer.vue";
 </script>
 
 <style lang="scss">
+@import "./styles/typography.scss";
 @import "./styles/variables.scss";
+@import "./styles/mixins.scss";
 
 * {
   margin: 0;
@@ -40,10 +42,13 @@ a {
 
 .column--container {
   display: flex;
-  flex-wrap: wrap;
+
+  @include tablet {
+    flex-direction: column;
+  }
 
   & > article {
-    flex: 1 1 25rem;
+    flex: 1 1 20rem;
   }
 }
 </style>
