@@ -24,7 +24,7 @@ export const articles: IArticle[] = [
     title: "Tweede nieuwsartikel",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quo ab nesciunt aperiam adipisci et quas atque voluptatem blanditiis minus similique cumque amet exercitationem commodi, illo minima nemo eaque eligendi.",
-    image: "slider1.jpg",
+    image: "slider2.jpg",
   },
   {
     id: 1,
@@ -33,6 +33,6 @@ export const articles: IArticle[] = [
     title: "Eerste nieuwsartikel!",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quo ab nesciunt aperiam adipisci et quas atque voluptatem blanditiis minus similique cumque amet exercitationem commodi, illo minima nemo eaque eligendi.",
-    image: "slider1.jpg",
+    image: "slider3.jpg",
   },
 ];
