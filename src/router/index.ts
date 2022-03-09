@@ -19,12 +19,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/nieuws",
     name: "Nieuws",
-    component: () => import("../views/Nieuws.vue"),
+    component: () => import("../views/News.vue"),
   },
   {
     path: "/overzicht",
     name: "Overzicht",
     component: () => import("../views/Overzicht.vue"),
+  },
+  {
+    path: "/doneren",
+    name: "Donate",
+    component: () => import("../views/Donate.vue"),
   },
   {
     path: "/:pathMatch(.*)*",
