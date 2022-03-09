@@ -2,8 +2,8 @@
   <div class="background"></div>
   <section class="hero column--container">
     <article>
-      <h1>Geen enkel dier is overbodig</h1>
-      <p>Ieder dier in nood is welkom in onze opvang. Wij vinden dat ieder dier geholpen moet worden, ongeacht waar het dier geboren is, een ziekte of handicap heeft.</p>
+      <h1 class="hero--title">Geen enkel dier is overbodig</h1>
+      <p class="hero--subtitle">Ieder dier in nood is welkom in onze opvang. Wij vinden dat ieder dier geholpen moet worden, ongeacht waar het dier geboren is, een ziekte of handicap heeft.</p>
       <router-link :to="{ name: 'Home' }">Verander nu een leven</router-link>
     </article>
     <article>
@@ -32,16 +32,16 @@
     <Slider />
   </section>
 
-  <section>
-    <!-- Wrapper om negative margins te gebruiken  -->
-    <div class="news--wrapper column--container">
-      <NewsCard :id="articles[0].id" />
-      <NewsCard :id="articles[1].id" />
-      <NewsCard :id="articles[2].id" />
+  <section class="news--section">
+    <h2 class="section--title">Laatste nieuws</h2>
+    <div class="column--container">
+      <ArticleCard :id="articles[0].id" />
+      <ArticleCard :id="articles[1].id" />
+      <ArticleCard :id="articles[2].id" />
     </div>
   </section>
 
-  <div class="donate--wrapper">
+  <div class="newsletter--wrapper">
     <section class="column--container">
       <article>
         <h2>Ontvang nieuws in je mailbox.</h2>
@@ -81,7 +81,7 @@
 import { ref } from "vue";
 import { articles } from "../data/articles";
 import Slider from "../components/Slider.vue";
-import NewsCard from "../components/NewsCard.vue";
+import ArticleCard from "../components/ArticleCard.vue";
 
 let donateCounter = ref(45);
 let emailInput = ref("");
@@ -92,16 +92,18 @@ function sendMail() {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
 
-.hero--gradient {
+.background {
+  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  background: linear-gradient($primary-accent-color, transparent);
 }
 
 .hero {
@@ -109,34 +111,22 @@ function sendMail() {
   padding-bottom: $nav-height;
   align-items: center;
 
-  article + article {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  img {
-    width: 60%;
-  }
-
-  a {
-    color: $primary-color;
-  }
-
-  h1 {
-    font-size: 5rem;
-    line-height: 1.1;
-    font-weight: 800;
-  }
-
   p {
-    font-size: 1.25rem;
     margin: 2rem 0 1rem 0;
   }
 
   a {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    color: $primary-color;
     font-weight: 600;
+  }
+
+  article + article {
+    text-align: right;
+  }
+
+  img {
+    width: 60%;
   }
 }
 
@@ -144,61 +134,74 @@ function sendMail() {
   justify-content: center;
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
 
-  .donate--information {
-    h2 {
-      color: $secondary-color;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      font-weight: 800;
-    }
-
-    p {
-      margin: 2rem 0 1.5rem 0;
-    }
+.donate--information {
+  h2 {
+    color: $secondary-color;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
   }
 
-  .donate--stats {
-    text-align: right;
-
-    .goal--container {
-      width: 100%;
-      background-color: $primary-accent-color;
-      border-radius: 0.25rem;
-    }
-
-    .current--container {
-      background-color: $primary-color;
-      width: 45%;
-      padding: 0.25rem;
-      border-radius: inherit;
-      color: white;
-      text-align: center;
-
-      transition: width 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    p {
-      color: $primary-color;
-      font-size: 5rem;
-      font-weight: 700;
-    }
+  p {
+    margin: 2rem 0 1.5rem 0;
   }
 }
 
-.news--wrapper {
+.donate--stats {
+  text-align: right;
+  padding-left: 2rem;
+
+  @include tablet {
+    padding-left: 0;
+  }
+
+  .goal--container {
+    width: 100%;
+    background-color: $primary-accent-color;
+    border-radius: 0.25rem;
+  }
+
+  .current--container {
+    background-color: $primary-color;
+    width: 45%;
+    padding: 0.25rem;
+    border-radius: inherit;
+    color: white;
+    text-align: center;
+
+    transition: width 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  p {
+    color: $primary-color;
+    font-size: 5rem;
+    font-weight: 700;
+  }
+}
+
+.news--section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
-  margin: -1rem;
+
+  h2 {
+    color: $secondary-color;
+    padding-bottom: 1rem;
+  }
+
+  & > div {
+    margin: -1rem;
+  }
 
   article {
     margin: 1rem;
   }
 }
 
-.donate--wrapper {
+.newsletter--wrapper {
   background-color: $secondary-accent-color;
-  padding: 5rem 0;
+  padding: 6rem 0;
 
   h2 {
     font-size: 3rem;
@@ -237,15 +240,5 @@ function sendMail() {
     padding-top: 1rem;
     line-height: 1.6;
   }
-}
-
-.background {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient($primary-accent-color, transparent);
 }
 </style>
