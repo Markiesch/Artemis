@@ -1,13 +1,14 @@
 <template>
-  <div class="background"></div>
   <Navigation />
   <main>
     <router-view />
   </main>
+  <Footer />
 </template>
 
 <script setup lang="ts">
 import Navigation from "./components/Navigation.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <style lang="scss">
@@ -21,7 +22,8 @@ import Navigation from "./components/Navigation.vue";
 }
 
 nav,
-section {
+section,
+footer {
   max-width: 90rem;
   margin: 0 auto;
   padding: 0 1rem;
@@ -30,15 +32,5 @@ section {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.background {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient($primary-accent-color, transparent);
 }
 </style>
