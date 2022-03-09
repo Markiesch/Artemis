@@ -1,5 +1,5 @@
 <template>
-  <article class="news--card" v-if="article">
+  <article v-if="article">
     <img :src="`/assets/${article.image}`" :alt="article.title" />
     <div class="details">
       <h2>{{ article.title }}</h2>
@@ -17,32 +17,30 @@ const { id } = defineProps<{ id: number }>();
 const article = articles.find((item) => item.id === id);
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/variables.scss";
 
-.news--card {
-  img {
-    border-radius: 0.5rem 0.5rem 0 0;
-    width: 100%;
-    display: block;
-    max-height: 15rem;
-    object-fit: cover;
-  }
+img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+  display: block;
+  max-height: 15rem;
+  object-fit: cover;
+}
 
-  .details {
-    padding: 1.5rem;
-    border-radius: 0 0 0.5rem 0.5rem;
-    border: thin solid rgba(0, 0, 0, 0.2);
-    border-top: none;
-  }
+.details {
+  padding: 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  border: thin solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+}
 
-  p {
-    margin: 0.75rem 0;
-  }
+p {
+  margin: 0.75rem 0;
+}
 
-  a {
-    color: $primary-color;
-    text-decoration: underline;
-  }
+a {
+  color: $primary-color;
+  text-decoration: underline;
 }
 </style>
