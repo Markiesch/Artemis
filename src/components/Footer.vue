@@ -1,6 +1,6 @@
 <template>
   <div class="footer-wrapper">
-    <footer>
+    <footer class="column--container">
       <article>
         <p>Artemis</p>
         <router-link :to="{ name: 'Home' }">Home</router-link>
@@ -30,12 +30,6 @@
 
 footer {
   color: white;
-  display: flex;
-  flex-wrap: wrap;
-
-  article {
-    flex: 1 1 20rem;
-  }
 
   p {
     font-weight: 600;
