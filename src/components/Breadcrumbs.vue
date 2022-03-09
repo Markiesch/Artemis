@@ -22,7 +22,7 @@ const props = defineProps<{ label?: string }>();
 
 section {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
 }
 
 .breadcrumbs {
