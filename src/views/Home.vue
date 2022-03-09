@@ -1,4 +1,5 @@
 <template>
+  <div class="background"></div>
   <section class="hero">
     <article>
       <h1>Geen enkel dier is overbodig</h1>
@@ -32,9 +33,47 @@
   </section>
 
   <section>
-    <NewsCard :id="articles[0].id" />
-    <NewsCard :id="articles[1].id" />
-    <NewsCard :id="articles[2].id" />
+    <!-- Wrapper om negative margins te gebruiken  -->
+    <div class="news--wrapper">
+      <NewsCard :id="articles[0].id" />
+      <NewsCard :id="articles[1].id" />
+      <NewsCard :id="articles[2].id" />
+    </div>
+  </section>
+
+  <div class="donate--wrapper">
+    <section>
+      <article>
+        <h2>Ontvang nieuws in je mailbox.</h2>
+      </article>
+      <article>
+        <input placeholder="Email adres" type="text" v-model="emailInput" />
+        <button @click="sendMail">Abonneer</button>
+      </article>
+    </section>
+  </div>
+
+  <section class="about--section">
+    <article>
+      <h2>Over ons</h2>
+      <p>
+        Artemis dierenopvang is een opvang waar in principe ieder dier in nood welkom is. Onze organisatie richt zich voornamelijk op huisdieren en wij zijn in regio Den Bosch de opvang met de meeste
+        huisdieren. Wij werken vanuit de gedachte dat ieder dier die hulp nodig heeft geholpen moet worden ongeacht waar het dier geboren is, een ziekte of handicap heeft of dat de eigenaar wel of
+        geen geld heeft voor de afstandskosten. Deze werkwijze is afwijkend van de meeste opvangen.
+      </p>
+      <p>
+        Het doel van onze stichting is het opvangen van deze 'overbodige' dieren, deze verzorging en eventueel training te geven en vervolgens op zoek te gaan naar een liefdevolle nieuwe baas. Wij
+        vangen zowel Nederlandse dieren op als dieren die in het buitenland geboren zijn. Deze laatste groep wordt veelal onbegrepen en dreigt vaak tussen wal en schip te belanden. Helaas worden
+        dieren nog vaak van een foto uitgezocht en vervolgens naar Nederland gestuurd. Met deze plaatsingen gaat het regelmatig mis en er is dan geen opvang voor deze dieren. Om te voorkomen dat ze op
+        verkoopsites belanden en vervolgens van hand tot hand gaan om nog meer trauma´s op te lopen richten wij ons op de opvang voor deze dieren. Bij ons komen ze tot rust, worden ze eventueel
+        getraind en gaan we vanuit daar op zoek naar een definitief thuis. Wij werken vanuit de gedachte dat op ieder potje een deksel past en er uiteindelijk een liefdevol thuis voor ieder dier komt.
+        Indien het dier zich prima voelt in de opvang is deze welkom zolang nodig is. Wij hanteren dan ook een absoluut NO KILL beleid en euthanasie is alleen aan de orde bij ondragelijk lijden.
+      </p>
+      <p>Omdat ieder dier een tweede kans verdient!</p>
+    </article>
+    <article>
+      <!-- <img src="" alt="" /> -->
+    </article>
   </section>
 </template>
 
@@ -44,9 +83,12 @@ import Slider from "../components/Slider.vue";
 import NewsCard from "../components/NewsCard.vue";
 import { articles } from "../data/articles";
 
-// const articles = articles;
-
 let donateCounter = ref(45);
+let emailInput = ref("");
+
+function sendMail() {
+  emailInput.value = "";
+}
 </script>
 
 <style lang="scss">
@@ -151,5 +193,81 @@ let donateCounter = ref(45);
       font-weight: 700;
     }
   }
+}
+
+.news--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  margin: -1rem;
+
+  article {
+    flex: 1 1 20rem;
+    margin: 1rem;
+  }
+}
+
+.donate--wrapper {
+  background-color: $secondary-accent-color;
+  padding: 5rem 0;
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  article {
+    flex: 1 1 20rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    color: $secondary-color;
+    line-height: 1.1;
+  }
+
+  input,
+  button {
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    border-radius: 0.25rem;
+    border: none;
+    text-align: left;
+    padding: 1em;
+    font-size: 1rem;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  button {
+    background-color: $secondary-color;
+    margin-top: 0.5rem;
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.about--section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem 2rem;
+
+  article {
+    flex: 1 1 20rem;
+  }
+}
+
+.background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient($primary-accent-color, transparent);
 }
 </style>
