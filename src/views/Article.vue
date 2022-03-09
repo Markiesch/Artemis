@@ -1,17 +1,16 @@
 <template>
-  <div v-if="article">
-    <Breadcrumbs label="artikel">
-      <template #default>{{ article.title }}</template>
-      <template #subtitle>
-        <p class="breadcrumbs--subtitle">
-          <span>{{ article.date }}</span> door <a href="">{{ article.author }}</a>
-        </p>
-      </template>
-    </Breadcrumbs>
-    <section class="article--section">
-      <img :src="`/assets/${article.image}`" alt="" />
-    </section>
-  </div>
+  <Breadcrumbs v-if="article" label="artikel">
+    <template #default>{{ article.title }}</template>
+    <template #subtitle>
+      <p class="breadcrumbs--subtitle">
+        <span>{{ article.date }}</span> door <a href="">{{ article.author }}</a>
+      </p>
+    </template>
+  </Breadcrumbs>
+
+  <section v-if="article">
+    <img :src="`/assets/${article.image}`" alt="" />
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -26,7 +25,7 @@ const article = articles.find((item) => item.id === +route.params.id);
 if (!article) router.push({ name: "404" });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .breadcrumbs--subtitle {
   margin-top: 1.5rem;
   opacity: 0.9;
@@ -36,15 +35,11 @@ if (!article) router.push({ name: "404" });
   }
 }
 
-.article--section {
-  padding-top: 2rem;
-
-  img {
-    width: 100%;
-    max-height: 25rem;
-    border-radius: 0.25rem;
-    object-fit: cover;
-    display: block;
-  }
+img {
+  width: 100%;
+  max-height: 25rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  display: block;
 }
 </style>
