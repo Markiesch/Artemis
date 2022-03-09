@@ -7,7 +7,7 @@
       <router-link :to="{ name: 'Nieuws' }">Nieuws</router-link>
       <router-link :to="{ name: 'About' }">Over ons</router-link>
     </div>
-    <div>Doneren</div>
+    <router-link :to="{ name: 'Donate' }">Doneren</router-link>
   </nav>
 </template>
 
