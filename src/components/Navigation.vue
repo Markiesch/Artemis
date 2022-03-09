@@ -15,24 +15,19 @@
 @import "../styles/variables.scss";
 
 nav {
-  height: $nav-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: $nav-height;
   font-size: 1.1rem;
 
-  .logo {
+  .logo,
+  .router-link-active {
     font-weight: 600;
   }
 
-  .link--container {
-    a {
-      padding: 1rem;
-    }
-
-    .router-link-active {
-      font-weight: 600;
-    }
+  .link--container a {
+    padding: 1rem;
   }
 }
 </style>
