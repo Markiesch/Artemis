@@ -1,19 +1,19 @@
 <template>
   <div class="background"></div>
-  <section class="hero">
+  <section class="hero column--container">
     <article>
       <h1>Geen enkel dier is overbodig</h1>
       <p>Ieder dier in nood is welkom in onze opvang. Wij vinden dat ieder dier geholpen moet worden, ongeacht waar het dier geboren is, een ziekte of handicap heeft.</p>
       <router-link :to="{ name: 'Home' }">Verander nu een leven</router-link>
     </article>
     <article>
-      <img src="assets/hero.png" alt="Hero" />
+      <img src="/assets/hero.png" alt="Hero" />
     </article>
   </section>
 
-  <section class="donate--section">
+  <section class="donate--section column--container">
     <article class="donate--information">
-      <h2>Wij willen het verschil maken</h2>
+      <h2>Wij willen samen het verschil maken</h2>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id dolor earum quasi velit veritatis, molestias quam optio recusandae commodi consectetur veniam consequatur, eum autem ratione nihil
         aliquam sunt? Saepe, commodi?
@@ -34,7 +34,7 @@
 
   <section>
     <!-- Wrapper om negative margins te gebruiken  -->
-    <div class="news--wrapper">
+    <div class="news--wrapper column--container">
       <NewsCard :id="articles[0].id" />
       <NewsCard :id="articles[1].id" />
       <NewsCard :id="articles[2].id" />
@@ -42,7 +42,7 @@
   </section>
 
   <div class="donate--wrapper">
-    <section>
+    <section class="column--container">
       <article>
         <h2>Ontvang nieuws in je mailbox.</h2>
       </article>
@@ -53,7 +53,7 @@
     </section>
   </div>
 
-  <section class="about--section">
+  <section class="about--section column--container">
     <article>
       <h2>Over ons</h2>
       <p>
@@ -79,15 +79,16 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { articles } from "../data/articles";
 import Slider from "../components/Slider.vue";
 import NewsCard from "../components/NewsCard.vue";
-import { articles } from "../data/articles";
 
 let donateCounter = ref(45);
 let emailInput = ref("");
 
 function sendMail() {
   emailInput.value = "";
+  alert("Deze functionaliteit wordt nog toegevoegd");
 }
 </script>
 
@@ -106,12 +107,7 @@ function sendMail() {
 .hero {
   min-height: calc(100vh - $nav-height);
   padding-bottom: $nav-height;
-  display: flex;
   align-items: center;
-
-  article {
-    flex: 1 1 20rem;
-  }
 
   article + article {
     display: flex;
@@ -145,14 +141,9 @@ function sendMail() {
 }
 
 .donate--section {
-  display: flex;
   justify-content: center;
   padding-top: 6rem;
   padding-bottom: 6rem;
-
-  article {
-    flex: 1 1 20rem;
-  }
 
   .donate--information {
     h2 {
@@ -196,14 +187,11 @@ function sendMail() {
 }
 
 .news--wrapper {
-  display: flex;
-  flex-wrap: wrap;
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
   margin: -1rem;
 
   article {
-    flex: 1 1 20rem;
     margin: 1rem;
   }
 }
@@ -211,15 +199,6 @@ function sendMail() {
 .donate--wrapper {
   background-color: $secondary-accent-color;
   padding: 5rem 0;
-
-  section {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  article {
-    flex: 1 1 20rem;
-  }
 
   h2 {
     font-size: 3rem;
@@ -252,12 +231,11 @@ function sendMail() {
 }
 
 .about--section {
-  display: flex;
-  flex-wrap: wrap;
   padding: 5rem 2rem;
 
-  article {
-    flex: 1 1 20rem;
+  p {
+    padding-top: 1rem;
+    line-height: 1.6;
   }
 }
 
