@@ -12,14 +12,14 @@ import ArticleCard from "./ArticleCard.vue";
 defineProps<{ articles: IArticle[] }>();
 </script>
 
-<style>
+<style lang="scss">
 .article--wrapper {
   display: flex;
   margin: -1rem;
-}
 
-article {
-  flex: 1 1 20rem;
-  margin: 1rem;
+  article {
+    flex: 1 1 20rem;
+    margin: 1rem;
+  }
 }
 </style>
