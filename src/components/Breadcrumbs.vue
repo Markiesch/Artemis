@@ -43,7 +43,7 @@ section {
 
   span,
   svg {
-    color: $grey-color;
+    // color: $grey-color;
     fill: currentColor;
   }
 }
