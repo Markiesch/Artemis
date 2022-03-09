@@ -21,6 +21,10 @@ import Footer from "./components/Footer.vue";
   font-family: "Poppins", sans-serif;
 }
 
+main {
+  min-height: calc(100vh - $nav-height);
+}
+
 nav,
 section,
 footer {
@@ -32,5 +36,14 @@ footer {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.column--container {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > article {
+    flex: 1 1 25rem;
+  }
 }
 </style>
