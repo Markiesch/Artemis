@@ -25,6 +25,7 @@ import Footer from "./components/Footer.vue";
 
 main {
   min-height: calc(100vh - $nav-height);
+  padding-bottom: 4rem;
 }
 
 nav,
