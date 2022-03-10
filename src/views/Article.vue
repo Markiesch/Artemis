@@ -10,6 +10,7 @@
 
   <section v-if="article">
     <img :src="`/assets/${article.image}`" alt="" />
+    <p class="content" v-for="text in article.content">{{ text }}</p>
   </section>
 </template>
 
@@ -26,6 +27,8 @@ if (!article) router.push({ name: "404" });
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/variables.scss";
+
 .breadcrumbs--subtitle {
   margin-top: 1.5rem;
   opacity: 0.9;
@@ -41,5 +44,12 @@ img {
   border-radius: 0.5rem;
   object-fit: cover;
   display: block;
+}
+
+.content {
+  padding-top: 1rem;
+  line-height: 1.6;
+  max-width: 120ch;
+  color: $text-color;
 }
 </style>
