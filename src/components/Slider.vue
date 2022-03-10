@@ -47,7 +47,7 @@ createInterval();
   }
 
   .slider--item {
-    height: 40rem;
+    height: 35rem;
     position: relative;
     flex: 1 0 100%;
   }
@@ -55,9 +55,7 @@ createInterval();
   img {
     top: 0;
     left: 0;
-    right: 0;
     position: absolute;
-    bottom: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
