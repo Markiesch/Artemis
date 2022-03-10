@@ -21,10 +21,11 @@
       <router-link :to="{ name: 'Home' }" @click="donateCounter += 5">Maak het verschil</router-link>
     </article>
     <article class="donate--stats">
-      <p>&euro;349</p>
+      <h3>&euro;349</h3>
       <div class="goal--container">
         <div class="current--container" :style="`width:${donateCounter}%`">{{ donateCounter }}%</div>
       </div>
+      <p><span>62</span> donateurs</p>
     </article>
   </section>
 
@@ -55,7 +56,7 @@
 
   <section class="about--section column--container">
     <article>
-      <h2>Over ons</h2>
+      <h2 class="section--title">Over ons</h2>
       <p>
         Artemis dierenopvang is een opvang waar in principe ieder dier in nood welkom is. Onze organisatie richt zich voornamelijk op huisdieren en wij zijn in regio Den Bosch de opvang met de meeste
         huisdieren. Wij werken vanuit de gedachte dat ieder dier die hulp nodig heeft geholpen moet worden ongeacht waar het dier geboren is, een ziekte of handicap heeft of dat de eigenaar wel of
@@ -146,6 +147,16 @@ function sendMail() {
 
   p {
     margin: 2rem 0 1.5rem 0;
+    color: $text-color;
+  }
+
+  a {
+    padding: 1rem;
+    line-height: 1;
+    background-color: $primary-color;
+    color: white;
+    display: inline-block;
+    border-radius: 0.25rem;
   }
 }
 
@@ -170,14 +181,22 @@ function sendMail() {
     border-radius: inherit;
     color: white;
     text-align: center;
-
     transition: width 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  p {
+  h3 {
     color: $primary-color;
     font-size: 5rem;
     font-weight: 700;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: $text-color;
+
+    span {
+      color: $primary-color;
+    }
   }
 }
 
@@ -234,11 +253,16 @@ function sendMail() {
 }
 
 .about--section {
-  padding: 5rem 2rem;
+  padding-top: 5rem;
 
   p {
     padding-top: 1rem;
     line-height: 1.6;
+    color: $text-color;
+  }
+
+  h2 {
+    color: $secondary-color;
   }
 }
 </style>
