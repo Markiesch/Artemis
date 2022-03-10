@@ -27,6 +27,7 @@ nav {
   align-items: center;
   height: $nav-height;
   font-size: 1.1rem;
+  color: $title-color;
 
   .logo {
     display: flex;
@@ -34,7 +35,8 @@ nav {
 
     svg {
       height: 1.25em;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
+      fill: currentColor;
     }
   }
 
@@ -44,7 +46,7 @@ nav {
   }
 
   .link--container a {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
   }
 }
 </style>
