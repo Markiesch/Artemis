@@ -14,11 +14,11 @@ defineProps<{ articles: IArticle[] }>();
 
 <style lang="scss">
 .article--wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   margin: -1rem;
 
   article {
-    flex: 1 1 20rem;
     margin: 1rem;
   }
 }
