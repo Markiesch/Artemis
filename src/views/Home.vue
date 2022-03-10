@@ -1,13 +1,20 @@
 <template>
-  <div class="background"></div>
-  <section class="hero column--container">
+  <section class="hero">
     <article>
       <h1 class="hero--title">Geen enkel dier is overbodig</h1>
       <p class="hero--subtitle">Ieder dier in nood is welkom in onze opvang. Wij vinden dat ieder dier geholpen moet worden, ongeacht waar het dier geboren is, een ziekte of handicap heeft.</p>
       <router-link :to="{ name: 'Home' }">Verander nu een leven</router-link>
     </article>
     <article>
-      <img src="/assets/hero.png" alt="Hero" />
+      <div>
+        <img src="/assets/hero1.jpg" alt="Hero" />
+      </div>
+      <div>
+        <img src="/assets/hero2.jpg" alt="Hero" />
+      </div>
+      <div>
+        <img src="/assets/hero3.jpg" alt="Hero" />
+      </div>
     </article>
   </section>
 
@@ -97,37 +104,73 @@ function sendMail() {
 @import "../styles/variables.scss";
 @import "../styles/mixins.scss";
 
-.background {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient($primary-accent-color, transparent);
-}
-
 .hero {
   min-height: calc(100vh - $nav-height);
-  padding-bottom: $nav-height;
   align-items: center;
+  display: flex;
+  padding-bottom: calc($nav-height / 2);
 
-  p {
-    margin: 2rem 0 1rem 0;
-  }
-
-  a {
-    font-size: 1.5rem;
-    color: $primary-color;
-    font-weight: 600;
+  article {
+    flex: 1 1 30rem;
   }
 
   article + article {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    margin: -0.5rem;
+    filter: drop-shadow(0 0 25vw rgba(20, 71, 57, 0.5));
+
+    div {
+      overflow: hidden;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    div:nth-child(2) {
+      transform: translateY(2.5rem);
+    }
   }
 
   img {
-    width: 60%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    color: $title-color;
+    max-width: 13ch;
+  }
+
+  p {
+    padding: 2rem 0;
+    max-width: 45ch;
+    color: $text-color;
+  }
+
+  a {
+    display: inline-block;
+    background-color: $secondary-color;
+    font-size: 1.1rem;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    line-height: 1;
+    color: white;
+    font-weight: 600;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    text-align: center;
+
+    article {
+      flex: unset;
+    }
+
+    h1,
+    p {
+      max-width: unset;
+    }
   }
 }
 
