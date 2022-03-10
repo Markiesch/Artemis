@@ -23,14 +23,20 @@ import Footer from "./components/Footer.vue";
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 main {
-  min-height: calc(100vh - $nav-height);
   padding-bottom: 4rem;
 }
 
 nav,
 section,
 footer {
+  width: 100%;
   max-width: 90rem;
   margin: 0 auto;
   padding: 0 1rem;
