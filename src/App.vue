@@ -30,7 +30,7 @@ body {
 }
 
 main {
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
 }
 
 nav,
