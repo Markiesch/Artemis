@@ -52,7 +52,7 @@ a {
 }
 
 .date {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(245, 245, 245);
   display: inline-block;
   padding: 0.75rem;
   line-height: 1;
