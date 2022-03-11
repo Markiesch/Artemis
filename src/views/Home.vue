@@ -163,6 +163,10 @@ function sendMail() {
     flex-direction: column;
     text-align: center;
 
+    article:first-of-type {
+      padding: 5rem 0;
+    }
+
     article {
       flex: unset;
     }
@@ -176,8 +180,8 @@ function sendMail() {
 
 .donate--section {
   justify-content: center;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
 }
 
 .donate--information {
