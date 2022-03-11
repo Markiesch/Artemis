@@ -8,8 +8,13 @@
       quod, soluta amet architecto totam ex atque, autem ipsam, neque qui itaque exercitationem ea? Nemo aperiam sint quam.
     </p>
     <div class="wrapper">
-      <article v-for="(option, index) in options" :class="{ active: activeIndex === index }" @click="activeIndex = index">
-        <p>&euro;{{ option }}</p>
+      <article
+        :style="`height: ${option.height}%; background-image: url('/assets/donate${index + 1}.jpg')`"
+        v-for="(option, index) in options"
+        :class="{ active: activeIndex === index }"
+        @click="activeIndex = index"
+      >
+        <p>&euro;{{ option.amount }}</p>
         <div class="overlay"></div>
       </article>
     </div>
@@ -27,9 +32,9 @@ interface IOption {
 }
 
 const options: IOption[] = [
-  { amount: 10, height: 25 },
-  { amount: 25, height: 50 },
-  { amount: 50, height: 75 },
+  { amount: 10, height: 55 },
+  { amount: 25, height: 70 },
+  { amount: 50, height: 85 },
   { amount: 100, height: 100 },
 ];
 
@@ -45,20 +50,21 @@ function donate() {
 
 .wrapper {
   display: flex;
+  align-items: flex-end;
   margin: -1rem;
+  height: 80vh;
+  max-height: 40rem;
 }
 
 .caption {
   color: $text-color;
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
   max-width: 120ch;
 }
 
 article {
   flex: 1 1 20rem;
   margin: 1rem;
-  height: 80vh;
-  max-height: 40rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -68,7 +74,8 @@ article {
   overflow: hidden;
   border-radius: 0.5rem;
   cursor: pointer;
-  background-image: url("/assets/slider1.jpg");
+  background-image: url("/assets/donate1.jpg");
+  background-size: cover;
   background-position: center center;
   transition: transform 300ms ease;
 
