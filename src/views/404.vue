@@ -4,8 +4,8 @@
     <p>De opgegeven URL kon niet worden gevonden</p>
     <div class="link--container">
       <router-link :to="{ name: 'Home' }">Home</router-link>
-      <router-link :to="{ name: 'Home' }">Overzicht</router-link>
-      <router-link :to="{ name: 'Home' }">Doneren</router-link>
+      <router-link :to="{ name: 'Overzicht' }">Overzicht</router-link>
+      <router-link :to="{ name: 'Donate' }">Doneren</router-link>
     </div>
   </section>
 </template>
