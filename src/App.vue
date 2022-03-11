@@ -54,7 +54,7 @@ a {
     flex-direction: column;
   }
 
-  & > article {
+  & > * {
     flex: 1 1 20rem;
   }
 }
