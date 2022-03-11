@@ -22,4 +22,9 @@ export const pets: IPet[] = [
     filter: "Katten",
     image: "mocha.jpg",
   },
+  {
+    name: "Fried chicken",
+    filter: "Honden",
+    image: "chickens.jpg",
+  },
 ];
