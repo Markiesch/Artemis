@@ -1,12 +1,9 @@
 <template>
   <Breadcrumbs>Overzicht</Breadcrumbs>
-  <section>
-    <Slider />
-  </section>
-  <section class="card--section">
-    <div class="filters">
+  <section class="container">
+    <div class="filter--container">
       <h2>Filters</h2>
-      <button v-for="filter in filters()" class="filter--button" :class="{ active: selectedFilters.includes(filter) }" @click="toggleFilter(filter)">{{ filter }}</button>
+      <button v-for="filter in filters()" :class="{ active: selectedFilters.includes(filter) }" @click="toggleFilter(filter)">{{ filter }}</button>
     </div>
     <div class="card--container">
       <PetCard v-for="pet in filteredPets()" :pet="pet" />
@@ -18,7 +15,6 @@
 import { Ref, ref } from "vue";
 import Breadcrumbs from "../components/Breadcrumbs.vue";
 import PetCard from "../components/PetCard.vue";
-import Slider from "../components/Slider.vue";
 import { IPetFilter, pets } from "../data/pets";
 
 const selectedFilters: Ref<string[]> = ref([]);
@@ -35,46 +31,57 @@ const filteredPets = () => pets.filter((item) => !selectedFilters.value.length |
 <style scoped lang="scss">
 @import "../styles/variables.scss";
 
-.card--section {
-  padding-top: 5rem;
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.filter--container {
+  padding-right: 3rem;
+  min-width: 12.5rem;
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+
+  button {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
+
+    text-align: left;
+    line-height: 1;
+    font-weight: 500;
+    color: $text-color;
+    background-color: white;
+    cursor: pointer;
+
+    transition: background-color 100ms ease, border-color 100ms ease;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      border: 1px solid rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .active {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    color: white;
+  }
 }
 
 .card--container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  margin: -1rem;
+  margin: -0.75rem;
 
-  article {
-    margin: 1rem;
+  & > * {
+    margin: 0.75rem;
   }
-}
-
-.filters {
-  margin-bottom: 2rem;
-}
-
-.filter--button {
-  cursor: pointer;
-  margin-right: 0.5rem;
-  display: inline-block;
-  border-radius: 0.25rem;
-  padding: 0.75rem;
-  line-height: 1;
-  color: $text-color;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  transition: background-color 100ms ease, border-color 100ms ease;
-
-  &:hover,
-  &:focus,
-  &:focus-visible {
-    border: 1px solid rgba(0, 0, 0, 0.8);
-  }
-}
-
-.active {
-  background-color: $primary-color;
-  border-color: $primary-color;
-  color: white;
 }
 </style>
