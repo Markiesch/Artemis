@@ -2,7 +2,8 @@
   <article>
     <img :src="`/assets/pets/${pet.image}`" :alt="pet.name" />
     <div class="overlay">
-      <h2>{{ pet.name }}</h2>
+      <h2 class="section--title">{{ pet.name }}</h2>
+      <p>{{ pet.description }}</p>
     </div>
   </article>
 </template>
@@ -21,7 +22,8 @@ article {
 
   img {
     width: 100%;
-    max-height: 20rem;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
 
@@ -38,11 +40,13 @@ article {
     justify-content: flex-end;
     padding: 2rem;
 
-    transform: translateY(100%);
-    transition: transform 300ms ease;
+    opacity: 0;
+    transform: translateY(25%);
+    transition: transform 300ms ease, opacity 300ms ease;
   }
 
   &:hover .overlay {
+    opacity: 1;
     transform: translateY(0);
   }
 }
