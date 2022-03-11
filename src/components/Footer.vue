@@ -6,34 +6,35 @@
         <router-link :to="{ name: 'Home' }">Home</router-link>
         <router-link :to="{ name: 'About' }">Over ons</router-link>
         <router-link :to="{ name: 'Overzicht' }">Adoptie</router-link>
-        <!-- <router-link :to="{ name: '' }">Contact</router-link> -->
+        <router-link :to="{ name: 'Donate' }">Doneren</router-link>
       </article>
 
       <article>
-        <h2>Abonneer op onze nieuwsbrief</h2>
-        <input placeholder="Email adres" type="text" />
-        <button>Abonneer</button>
+        <p>Laatste Nieuws</p>
+        <router-link v-for="article in articles" :to="{ name: 'Article', params: { id: article.id } }">{{ article.title }}</router-link>
       </article>
     </footer>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { articles } from "../data/articles";
+</script>
 
 <style lang="scss">
 @import "../styles/variables.scss";
 
 .footer-wrapper {
-  background-color: $primary-color;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: 3rem 0;
 }
 
 footer {
-  color: white;
+  color: $title-color;
 
   p {
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   a {
