@@ -118,7 +118,7 @@ function sendMail() {
     display: flex;
     justify-content: space-between;
     margin: -0.5rem;
-    filter: drop-shadow(0 0 25vw rgba(20, 71, 57, 0.5));
+    filter: drop-shadow(0 0 5vw rgba(20, 71, 57, 0.3));
 
     div {
       overflow: hidden;
