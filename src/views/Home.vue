@@ -171,6 +171,10 @@ function sendMail() {
       flex: unset;
     }
 
+    article + article {
+      filter: drop-shadow(0 0 15vw rgba(20, 71, 57, 0.3)) !important;
+    }
+
     h1,
     p {
       max-width: unset;
