@@ -32,9 +32,9 @@ interface IOption {
 }
 
 const options: IOption[] = [
-  { amount: 10, height: 55 },
-  { amount: 25, height: 70 },
-  { amount: 50, height: 85 },
+  { amount: 10, height: 76 },
+  { amount: 25, height: 84 },
+  { amount: 50, height: 92 },
   { amount: 100, height: 100 },
 ];
 
@@ -82,7 +82,7 @@ article {
   p {
     padding: 1rem;
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
   }
 }
