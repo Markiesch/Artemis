@@ -1,5 +1,5 @@
 <template>
-  <Breadcrumbs>Overzicht</Breadcrumbs>
+  <Breadcrumbs>Adopteren</Breadcrumbs>
   <section class="container">
     <div class="filter--container">
       <h2>Filters</h2>
@@ -69,8 +69,8 @@ const filteredPets = () => pets.filter((item) => !selectedFilters.value.length |
   }
 
   .active {
-    background-color: $secondary-color;
-    border-color: $secondary-color;
+    background-color: $primary-color;
+    border-color: $primary-color;
     color: white;
   }
 }

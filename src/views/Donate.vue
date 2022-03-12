@@ -104,7 +104,7 @@ article:active {
 }
 
 .active .overlay {
-  background: linear-gradient(transparent, $primary-color);
+  background: linear-gradient(transparent, $secondary-color);
 }
 
 button {
@@ -112,7 +112,7 @@ button {
   display: inline-block;
   border: none;
   border-radius: 0.25rem;
-  background-color: $primary-color;
+  background-color: $secondary-color;
   color: white;
   margin-top: 2rem;
   font-size: 1.1rem;

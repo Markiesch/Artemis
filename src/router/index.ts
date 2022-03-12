@@ -7,7 +7,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/Home.vue"),
   },
   {
-    path: "/about",
+    path: "/over-ons",
     name: "About",
     component: () => import("../views/About.vue"),
   },
@@ -22,9 +22,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/News.vue"),
   },
   {
-    path: "/overzicht",
-    name: "Overzicht",
-    component: () => import("../views/Overzicht.vue"),
+    path: "/adopteren",
+    name: "Adopt",
+    component: () => import("../views/Adopt.vue"),
   },
   {
     path: "/doneren",

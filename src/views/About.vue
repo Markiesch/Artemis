@@ -37,7 +37,7 @@ img {
 }
 
 div {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(250, 250, 250);
   padding: 2.5rem;
   border-radius: 0 0 0.5rem 0.5rem;
 }

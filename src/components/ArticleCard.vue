@@ -37,7 +37,9 @@ img {
 }
 
 h2 {
-  color: $secondary-color;
+  color: $primary-color;
+  font-size: 1.75rem;
+  line-height: 1.2;
 }
 
 p {
@@ -47,7 +49,7 @@ p {
 }
 
 a {
-  color: $primary-color;
+  color: $secondary-color;
   text-decoration: underline;
 }
 

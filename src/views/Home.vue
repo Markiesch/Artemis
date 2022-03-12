@@ -25,12 +25,12 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id dolor earum quasi velit veritatis, molestias quam optio recusandae commodi consectetur veniam consequatur, eum autem ratione nihil
         aliquam sunt? Saepe, commodi?
       </p>
-      <router-link :to="{ name: 'Home' }" @click="donateCounter += 5">Maak het verschil</router-link>
+      <router-link :to="{ name: 'Donate' }">Doneren</router-link>
     </article>
     <article class="donate--stats">
       <h3>&euro;349</h3>
       <div class="goal--container">
-        <div class="current--container" :style="`width:${donateCounter}%`">{{ donateCounter }}%</div>
+        <div class="current--container" :style="`width: 49%`">49%</div>
       </div>
       <p><span>62</span> donateurs</p>
     </article>
@@ -116,9 +116,8 @@ function sendMail() {
 
   article + article {
     display: flex;
-    justify-content: space-between;
     margin: -0.5rem;
-    filter: drop-shadow(0 0 5vw rgba(20, 71, 57, 0.3));
+    filter: drop-shadow(0 0 5rem rgba(20, 71, 57, 0.3));
 
     div {
       overflow: hidden;
@@ -150,7 +149,7 @@ function sendMail() {
 
   a {
     display: inline-block;
-    background-color: $secondary-color;
+    background-color: $primary-color;
     font-size: 1.1rem;
     border-radius: 0.25rem;
     padding: 1rem;
@@ -163,16 +162,12 @@ function sendMail() {
     flex-direction: column;
     text-align: center;
 
-    article:first-of-type {
-      padding: 5rem 0;
-    }
-
     article {
       flex: unset;
     }
 
-    article + article {
-      filter: drop-shadow(0 0 15vw rgba(20, 71, 57, 0.3)) !important;
+    article:first-of-type {
+      padding: 5rem 0;
     }
 
     h1,
@@ -190,7 +185,7 @@ function sendMail() {
 
 .donate--information {
   h2 {
-    color: $secondary-color;
+    color: $primary-color;
     font-size: 3.5rem;
     line-height: 1.1;
     font-weight: 800;
@@ -203,8 +198,9 @@ function sendMail() {
 
   a {
     padding: 1rem;
+    font-weight: 500;
     line-height: 1;
-    background-color: $primary-color;
+    background-color: $secondary-color;
     color: white;
     display: inline-block;
     border-radius: 0.25rem;
@@ -213,7 +209,6 @@ function sendMail() {
 
 .donate--stats {
   text-align: right;
-  padding-left: 2rem;
 
   @include tablet {
     padding-left: 0;
@@ -221,32 +216,33 @@ function sendMail() {
 
   .goal--container {
     width: 100%;
-    background-color: $primary-accent-color;
+    background-color: $secondary-accent-color;
     border-radius: 0.25rem;
   }
 
   .current--container {
-    background-color: $primary-color;
-    width: 45%;
+    background-color: $secondary-color;
     padding: 0.25rem;
     border-radius: inherit;
     color: white;
     text-align: center;
-    transition: width 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 500;
+    font-size: 1.25rem;
   }
 
   h3 {
-    color: $primary-color;
-    font-size: 5rem;
+    color: $secondary-color;
+    font-size: 6rem;
     font-weight: 700;
   }
 
   p {
     margin-top: 1rem;
     color: $text-color;
+    font-size: 1.25rem;
 
     span {
-      color: $primary-color;
+      color: $secondary-color;
     }
   }
 }
@@ -256,7 +252,7 @@ function sendMail() {
   padding-bottom: 7.5rem;
 
   h2 {
-    color: $secondary-color;
+    color: $primary-color;
     padding-bottom: 1rem;
   }
 
@@ -270,12 +266,12 @@ function sendMail() {
 }
 
 .newsletter--wrapper {
-  background-color: $secondary-accent-color;
+  background-color: $primary-accent-color;
   padding: 6rem 0;
 
   h2 {
     font-size: 3rem;
-    color: $secondary-color;
+    color: $primary-color;
     line-height: 1.1;
   }
 
@@ -296,7 +292,7 @@ function sendMail() {
   }
 
   button {
-    background-color: $secondary-color;
+    background-color: $primary-color;
     margin-top: 0.5rem;
     color: white;
     font-weight: 500;
@@ -313,7 +309,7 @@ function sendMail() {
   }
 
   h2 {
-    color: $secondary-color;
+    color: $primary-color;
   }
 }
 </style>

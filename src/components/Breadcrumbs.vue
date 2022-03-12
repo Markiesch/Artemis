@@ -32,7 +32,7 @@ section {
 
   a {
     font-weight: 600;
-    color: $primary-color;
+    color: $secondary-color;
 
     &:hover + svg {
       transform: rotate(180deg);

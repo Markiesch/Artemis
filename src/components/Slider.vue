@@ -70,14 +70,14 @@ createInterval();
     width: 1rem;
     height: 1rem;
     margin: 1rem 0.25rem;
-    background-color: $primary-accent-color;
+    background-color: $secondary-accent-color;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 300ms ease;
   }
 
   .active {
-    background-color: $primary-color;
+    background-color: $secondary-color;
   }
 }
 </style>

@@ -5,7 +5,7 @@
         <p>Artemis</p>
         <router-link :to="{ name: 'Home' }">Home</router-link>
         <router-link :to="{ name: 'About' }">Over ons</router-link>
-        <router-link :to="{ name: 'Overzicht' }">Adoptie</router-link>
+        <router-link :to="{ name: 'Adopt' }">Adoptie</router-link>
         <router-link :to="{ name: 'Donate' }">Doneren</router-link>
       </article>
 

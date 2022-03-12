@@ -33,7 +33,7 @@ import Breadcrumbs from "../components/Breadcrumbs.vue";
 
 article + article {
   border-radius: 0.5rem;
-  background-color: $primary-color;
+  background-color: $secondary-color;
 }
 
 label,
