@@ -7,17 +7,17 @@
       deleniti possimus. Cumque nemo ad obcaecati recusandae, earum architecto officiis. Voluptatum debitis minima sed ut in, magni illum architecto error sunt culpa nesciunt rem modi! Repellendus
       quod, soluta amet architecto totam ex atque, autem ipsam, neque qui itaque exercitationem ea? Nemo aperiam sint quam.
     </p>
+  </section>
+
+  <section>
     <div class="wrapper">
-      <article
-        :style="`height: ${option.height}%; background-image: url('/assets/donate${index + 1}.jpg')`"
-        v-for="(option, index) in options"
-        :class="{ active: activeIndex === index }"
-        @click="activeIndex = index"
-      >
-        <p>&euro;{{ option.amount }}</p>
+      <article :style="`background-image: url('/assets/donate${index + 1}.jpg')`" v-for="(option, index) in options" :class="{ active: activeIndex === index }" @click="activeIndex = index">
+        <p>&euro;{{ option }}</p>
         <div class="overlay"></div>
       </article>
     </div>
+  </section>
+  <section>
     <button @click="donate">Doneren</button>
   </section>
 </template>
@@ -26,57 +26,51 @@
 import { ref } from "vue";
 import Breadcrumbs from "../components/Breadcrumbs.vue";
 
-interface IOption {
-  amount: number;
-  height: number;
-}
-
-const options: IOption[] = [
-  { amount: 10, height: 76 },
-  { amount: 25, height: 84 },
-  { amount: 50, height: 92 },
-  { amount: 100, height: 100 },
-];
-
+const options = [10, 25, 50, 100];
 const activeIndex = ref(1);
 
 function donate() {
-  alert(`Bedankt dat u €${options[activeIndex.value]} heeft gedoneerd!`);
+  alert(`Bedankt voor de €${options[activeIndex.value]} donatie!`);
 }
 </script>
 
 <style scoped lang="scss">
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.caption {
+  color: $text-color;
+  margin-bottom: 4rem;
+  max-width: 120ch;
+}
 
 .wrapper {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
   margin: -1rem;
   height: 80vh;
   max-height: 40rem;
 }
 
-.caption {
-  color: $text-color;
-  margin-bottom: 8rem;
-  max-width: 120ch;
-}
-
 article {
-  flex: 1 1 20rem;
-  margin: 1rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  background-color: rgb(240, 240, 240);
   position: relative;
   z-index: 1;
   overflow: hidden;
+  height: 100%;
+  flex: 1 1 20rem;
+
+  margin: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  background-image: url("/assets/donate1.jpg");
+
+  background-color: rgb(240, 240, 240);
   background-size: cover;
   background-position: center center;
+
   transition: transform 300ms ease;
 
   p {
