@@ -52,6 +52,7 @@ function toggleMenu() {
 
 <style scoped lang="scss">
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
 
 nav {
   display: flex;
@@ -63,6 +64,12 @@ nav {
 
   .link--container a {
     padding: 1rem 1.25rem;
+  }
+
+  @include tablet {
+    .link--container {
+      display: none;
+    }
   }
 }
 
