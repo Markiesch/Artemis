@@ -120,6 +120,7 @@ function sendMail() {
     filter: drop-shadow(0 0 5rem rgba(20, 71, 57, 0.3));
 
     div {
+      flex: 1 1 20rem;
       overflow: hidden;
       margin: 0.5rem;
       border-radius: 0.5rem;
