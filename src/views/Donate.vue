@@ -1,30 +1,18 @@
 <template>
-  <Breadcrumbs>Doneren</Breadcrumbs>
-
   <section>
-    <p class="caption">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore alias, odit nulla magnam ipsum tenetur earum illo necessitatibus tempora debitis expedita praesentium quam esse sequi, eveniet
-      deleniti possimus. Cumque nemo ad obcaecati recusandae, earum architecto officiis. Voluptatum debitis minima sed ut in, magni illum architecto error sunt culpa nesciunt rem modi! Repellendus
-      quod, soluta amet architecto totam ex atque, autem ipsam, neque qui itaque exercitationem ea? Nemo aperiam sint quam.
-    </p>
-  </section>
-
-  <section>
-    <div class="wrapper">
-      <article :style="`background-image: url('/assets/donate${index + 1}.jpg')`" v-for="(option, index) in options" :class="{ active: activeIndex === index }" @click="activeIndex = index">
-        <p>&euro;{{ option }}</p>
-        <div class="overlay"></div>
-      </article>
+    <h1>Wij willen samen het verschil maken, met u</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore, atque earum doloremque saepe voluptas.</p>
+    <div class="card--container">
+      <div v-for="(option, index) in options" :class="{ active: activeIndex === index }" @click="activeIndex = index">
+        <p>€{{ option }}</p>
+      </div>
     </div>
-  </section>
-  <section>
-    <button @click="donate">Doneren</button>
+    <button @click="donate">Doneer nu</button>
   </section>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import Breadcrumbs from "../components/Breadcrumbs.vue";
 
 const options = [10, 25, 50, 100];
 const activeIndex = ref(1);
@@ -38,80 +26,56 @@ function donate() {
 @import "../styles/variables.scss";
 @import "../styles/mixins.scss";
 
-.caption {
-  color: $text-color;
-  margin-bottom: 4rem;
-  max-width: 120ch;
+section {
+  text-align: center;
 }
 
-.wrapper {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
+.card--container {
+  padding: 4rem 0 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   margin: -1rem;
-  height: 80vh;
-  max-height: 40rem;
-}
 
-article {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  height: 100%;
-  flex: 1 1 20rem;
+  div {
+    margin: 1rem;
+    padding: 2rem;
 
-  margin: 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: $primary-accent-color;
+    color: $title-color;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
 
-  background-color: rgb(240, 240, 240);
-  background-size: cover;
-  background-position: center center;
-
-  transition: transform 300ms ease;
-
-  p {
-    padding: 1rem;
+  .active {
+    background-color: $primary-color;
     color: white;
-    font-size: 2.5rem;
-    font-weight: 700;
   }
 }
 
-.overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background: linear-gradient(transparent, black);
-  z-index: -1;
-}
-
-.active,
-article:hover,
-article:active {
-  transform: translateY(-0.5rem);
-}
-
-.active .overlay {
-  background: linear-gradient(transparent, $secondary-color);
+h1 {
+  color: $primary-color;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
 }
 
 button {
-  padding: 1rem;
   display: inline-block;
-  border: none;
-  border-radius: 0.25rem;
-  background-color: $secondary-color;
-  color: white;
+  padding: 1rem 1.5rem;
   margin-top: 2rem;
+  cursor: pointer;
+
+  color: white;
+  background-color: $secondary-color;
+  border: none;
+  border-radius: 5rem;
+
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1;
-  cursor: pointer;
 }
 </style>
