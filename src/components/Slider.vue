@@ -1,9 +1,7 @@
 <template>
   <div class="slider--container">
     <div :style="`transform: translateX(-${sliderIndex * 100}%)`" class="slider">
-      <div v-for="item in items" class="slider--item">
-        <img :src="`assets/${item}.jpg`" :alt="item" />
-      </div>
+      <img v-for="item in items" width="1440" height="200" :src="`assets/${item}.jpg`" :alt="item" />
     </div>
   </div>
   <div class="controller--container">
@@ -46,18 +44,12 @@ createInterval();
     transition: transform 300ms ease;
   }
 
-  .slider--item {
-    height: 35rem;
-    position: relative;
-    flex: 1 0 100%;
-  }
-
   img {
-    top: 0;
-    left: 0;
-    position: absolute;
+    flex: 1 0 100%;
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
+    max-height: 40rem;
     object-fit: cover;
   }
 }
