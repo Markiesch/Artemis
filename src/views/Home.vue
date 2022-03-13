@@ -20,7 +20,7 @@
 
   <section class="donate--section column--container">
     <article class="donate--information">
-      <h2>Wij willen samen het verschil maken</h2>
+      <h2 class="large--section--title">Wij willen samen het verschil maken</h2>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id dolor earum quasi velit veritatis, molestias quam optio recusandae commodi consectetur veniam consequatur, eum autem ratione nihil
         aliquam sunt? Saepe, commodi?
@@ -182,12 +182,15 @@ function sendMail() {
   justify-content: center;
   padding-top: 15rem;
   padding-bottom: 15rem;
+
+  @include tablet {
+    text-align: center;
+  }
 }
 
 .donate--information {
   h2 {
     color: $primary-color;
-    font-size: 3.5rem;
     line-height: 1.1;
     font-weight: 800;
   }
