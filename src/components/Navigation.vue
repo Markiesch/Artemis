@@ -13,6 +13,8 @@
       <router-link :to="{ name: 'Adopt' }">Adopteren</router-link>
       <router-link :to="{ name: 'Nieuws' }">Nieuws</router-link>
       <router-link :to="{ name: 'About' }">Over ons</router-link>
+    </div>
+    <div class="link--container">
       <router-link :to="{ name: 'Donate' }">Doneren</router-link>
     </div>
     <div @click="toggleMenu" class="menu--icon__container">
@@ -91,11 +93,15 @@ nav {
 
 .menu--icon__container {
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 4rem;
   height: 4rem;
+  display: none;
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .menu--icon {
