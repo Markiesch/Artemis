@@ -49,10 +49,7 @@ a {
 
 .column--container {
   display: flex;
-
-  @include tablet {
-    flex-direction: column;
-  }
+  flex-wrap: wrap;
 
   & > * {
     flex: 1 1 20rem;
