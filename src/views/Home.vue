@@ -42,11 +42,7 @@
 
   <section class="news--section">
     <h2 class="section--title">Laatste nieuws</h2>
-    <div class="column--container">
-      <ArticleCard :id="articles[0].id" />
-      <ArticleCard :id="articles[1].id" />
-      <ArticleCard :id="articles[2].id" />
-    </div>
+    <ArticleList :articles="[articles[0], articles[1], articles[2]]" />
   </section>
 
   <div class="newsletter--wrapper">
@@ -89,9 +85,8 @@
 import { ref } from "vue";
 import { articles } from "../data/articles";
 import Slider from "../components/Slider.vue";
-import ArticleCard from "../components/ArticleCard.vue";
+import ArticleList from "../components/ArticleList.vue";
 
-let donateCounter = ref(45);
 let emailInput = ref("");
 
 function sendMail() {

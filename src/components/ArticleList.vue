@@ -20,6 +20,8 @@ defineProps<{ articles: IArticle[] }>();
 
   article {
     margin: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
   }
 
   @include mobile {
