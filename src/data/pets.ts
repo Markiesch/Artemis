@@ -1,9 +1,7 @@
-export type IPetFilter = "Honden" | "Katten" | "Overige";
-
 export interface IPet {
   name: string;
   description: string;
-  filter: IPetFilter;
+  filter: string;
   image: string;
 }
 
@@ -27,9 +25,9 @@ export const pets: IPet[] = [
     image: "mocha.jpg",
   },
   {
-    name: "Fried chicken",
+    name: "Crosby",
     description: "TODO",
     filter: "Honden",
-    image: "chickens.jpg",
+    image: "crosby.jpg",
   },
 ];
