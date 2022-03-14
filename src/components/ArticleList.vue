@@ -11,14 +11,19 @@ defineProps<{ articles: IArticle[] }>();
 </script>
 
 <style lang="scss">
+@import "../styles/mixins.scss";
+
 .article--wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   margin: -1rem;
 
   article {
-    flex: 1 1 25rem;
     margin: 1rem;
+  }
+
+  @include mobile {
+    display: block;
   }
 }
 </style>
