@@ -15,11 +15,11 @@
 import { Ref, ref } from "vue";
 import Breadcrumbs from "../components/Breadcrumbs.vue";
 import PetCard from "../components/PetCard.vue";
-import { IPetFilter, pets } from "../data/pets";
+import { pets } from "../data/pets";
 
 const selectedFilters: Ref<string[]> = ref([]);
 
-function toggleFilter(filter: IPetFilter) {
+function toggleFilter(filter: string) {
   if (selectedFilters.value.includes(filter)) selectedFilters.value.splice(selectedFilters.value.indexOf(filter), 1);
   else selectedFilters.value.push(filter);
 }
@@ -77,7 +77,7 @@ const filteredPets = () => pets.filter((item) => !selectedFilters.value.length |
 
 .card--container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   margin: -0.75rem;
 
   & > * {
