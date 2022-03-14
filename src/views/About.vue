@@ -27,6 +27,7 @@ import Breadcrumbs from "../components/Breadcrumbs.vue";
 
 <style lang="scss" scoped>
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
 
 img {
   width: 100%;
@@ -37,9 +38,13 @@ img {
 }
 
 div {
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(248, 248, 248);
   padding: 2.5rem;
   border-radius: 0 0 0.5rem 0.5rem;
+
+  @include tablet {
+    padding: 1rem;
+  }
 }
 
 p {

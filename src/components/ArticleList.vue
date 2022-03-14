@@ -1,8 +1,6 @@
 <template>
   <div class="article--wrapper">
-    <div v-for="article of articles">
-      <ArticleCard :id="article.id" />
-    </div>
+    <ArticleCard v-for="article of articles" :id="article.id" />
   </div>
 </template>
 
@@ -14,11 +12,12 @@ defineProps<{ articles: IArticle[] }>();
 
 <style lang="scss">
 .article--wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   margin: -1rem;
 
   article {
+    flex: 1 1 25rem;
     margin: 1rem;
   }
 }

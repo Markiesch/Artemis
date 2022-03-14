@@ -36,10 +36,9 @@ main {
 nav,
 section,
 footer {
-  width: 100%;
+  width: 90%;
   max-width: 90rem;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 a {

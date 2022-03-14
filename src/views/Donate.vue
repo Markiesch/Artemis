@@ -55,12 +55,15 @@ section {
 }
 
 h1 {
+  max-width: 20ch;
+  margin: 0 auto;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+
   color: $primary-color;
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.1;
-  padding-top: 1em;
-  padding-bottom: 0.5em;
 }
 
 button {
