@@ -10,7 +10,7 @@ export interface IArticle {
 
 export const articles: IArticle[] = [
   {
-    id: 3,
+    id: 5,
     date: "23 oktober, 2021",
     author: "Mark Schuurmans",
     title: "Huisdieren vaccineren van levensbelang",
@@ -23,9 +23,9 @@ export const articles: IArticle[] = [
     image: "slider1.jpg",
   },
   {
-    id: 2,
+    id: 4,
     date: "28 oktober, 2021",
-    author: "Mark Schuurmans",
+    author: "Remco Evers",
     title: "Gevonden pups groeien als kool!",
     subtitle:
       "De tijd vliegt in het gastgezin waar begin november de gevonden pups Charlie en Louie uit Deventer verblijven. De kleine, kwestbare puppy's doen het echt supergoed en ook het gewicht gaat de goede kant uit.",
@@ -36,16 +36,42 @@ export const articles: IArticle[] = [
     image: "slider2.jpg",
   },
   {
-    id: 1,
+    id: 3,
     date: "4 november, 2021",
-    author: "Mark Schuurmans",
+    author: "Rob Wessels",
     title: "Collecteweek van start!",
-    subtitle:
-      "De medewerkers en vrijwilligers van de Dierenbescherming zetten zich elke dag opnieuw in om dieren te redden, op te vangen en te beschermen. Ze doen dit met liefde, maar kunnen dit alleen blijven doen met de steun van leden, donateurs en gulle gevers.",
+    subtitle: `De medewerkers en vrijwilligers van de Dierenbescherming zetten zich elke dag opnieuw in om dieren te redden, op te vangen en te beschermen. Ze doen dit met liefde, maar kunnen dit alleen blijven doen met de steun van leden, donateurs en gulle gevers.`,
     content: [
-      "De medewerkers en vrijwilligers van de Dierenbescherming zetten zich elke dag opnieuw in om dieren te redden, op te vangen en te beschermen. Ze doen dit met liefde, maar kunnen dit alleen blijven doen met de steun van leden, donateurs en gulle gevers. In de week van 27 september tot en met 3 oktober vragen we om steun tijdens de jaarlijkse collecteweek. Vrijwilligers gaan dan met de collectebus langs de deuren voor een bijdrage of collecteren digitaal met een online collectebus.",
-      "In Nederland leven miljoenen dieren. Huisdieren, landbouwdieren en wilde dieren. Deze dieren hebben zelf geen stem en komen daardoor helaas nogal eens in de verdrukking. De Dierenbescherming komt op voor deze dieren. Een aangereden kat, een verwaarloosde hond of een konijn dat achter is gelaten in het park, ze kunnen op onze hulp rekenen. Die hulp gaat dag en nacht door, ook in tijden van corona. We zijn onze collectanten daarom extra dankbaar voor hun tijd en inzet en we hopen dat deze inzet wordt beloond.",
+      `De medewerkers en vrijwilligers van de Dierenbescherming zetten zich elke dag opnieuw in om dieren te redden, op te vangen en te beschermen. Ze doen dit met liefde, maar kunnen dit alleen blijven doen met de steun van leden, donateurs en gulle gevers. In de week van 27 september tot en met 3 oktober vragen we om steun tijdens de jaarlijkse collecteweek. Vrijwilligers gaan dan met de collectebus langs de deuren voor een bijdrage of collecteren digitaal met een online collectebus.`,
+      `In Nederland leven miljoenen dieren. Huisdieren, landbouwdieren en wilde dieren. Deze dieren hebben zelf geen stem en komen daardoor helaas nogal eens in de verdrukking. De Dierenbescherming komt op voor deze dieren. Een aangereden kat, een verwaarloosde hond of een konijn dat achter is gelaten in het park, ze kunnen op onze hulp rekenen. Die hulp gaat dag en nacht door, ook in tijden van corona. We zijn onze collectanten daarom extra dankbaar voor hun tijd en inzet en we hopen dat deze inzet wordt beloond.`,
     ],
+    image: "slider3.jpg",
+  },
+  {
+    id: 2,
+    date: "23 augustus, 2021",
+    author: "Rob Wessels",
+    title: "Titel nieuwsartikel",
+    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat culpa quis quibusdam eius. Debitis recusandae quae minima sequi explicabo quos obcaecati porro praesentium est dolorum voluptate perferendis, id accusantium.`,
+    content: ["TODO"],
+    image: "slider3.jpg",
+  },
+  {
+    id: 1,
+    date: "18 juli, 2021",
+    author: "Mark Schuurmans",
+    title: "Titel nieuwsartikel",
+    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat culpa quis quibusdam eius. Debitis recusandae quae minima sequi explicabo quos obcaecati porro praesentium est dolorum voluptate perferendis, id accusantium.`,
+    content: ["TODO"],
+    image: "slider3.jpg",
+  },
+  {
+    id: 0,
+    date: "3 juni, 2021",
+    author: "Remco Evers",
+    title: "Titel nieuwsartikel",
+    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat culpa quis quibusdam eius. Debitis recusandae quae minima sequi explicabo quos obcaecati porro praesentium est dolorum voluptate perferendis, id accusantium.`,
+    content: ["TODO"],
     image: "slider3.jpg",
   },
 ];
