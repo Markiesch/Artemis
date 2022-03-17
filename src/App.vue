@@ -16,6 +16,9 @@ import Footer from "./components/Footer.vue";
 @import "./styles/variables.scss";
 @import "./styles/mixins.scss";
 
+$themeColor: $primary-color;
+@import "vue-slider-component/lib/theme/default.scss";
+
 * {
   margin: 0;
   padding: 0;
