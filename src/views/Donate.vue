@@ -16,7 +16,7 @@
       </svg>
     </div>
 
-    <RangeSlider class="range--slider" v-model="amount" :min="1" :max="300" :format="{ decimals: 0, prefix: '€' }" />
+    <VueSlider v-model="amount"></VueSlider>
     <div class="button--container">
       <div :class="{ active: amount == 15 }" @click="amount = 15">€15</div>
       <div :class="{ active: amount == 30 }" @click="amount = 30">€30</div>
@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import RangeSlider from "@vueform/slider";
+import VueSlider from "vue-slider-component";
 import { ref } from "vue";
 
 const amount = ref(50);
