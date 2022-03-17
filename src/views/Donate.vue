@@ -16,7 +16,7 @@
       </svg>
     </div>
 
-    <VueSlider v-model="amount"></VueSlider>
+    <VueSlider v-model="amount" tooltip-formatter="€{value}" tooltip="always" :min="1" :max="300" />
     <div class="button--container">
       <div :class="{ active: amount == 15 }" @click="amount = 15">€15</div>
       <div :class="{ active: amount == 30 }" @click="amount = 30">€30</div>
@@ -125,18 +125,6 @@ function validateMail() {
     transition: height 300ms linear;
     stroke: $primary-color;
   }
-}
-
-.range--slider {
-  --slider-bg: hsla(164, 56%, 18%, 0.2);
-  --slider-tooltip-bg: #144739;
-  --slider-connect-bg: #144739;
-  --slider-handle-shadow: 0.5px 0.5px 2px 1px rgba(20, 71, 57, 0.3);
-  --slider-handle-shadow-active: 0.5px 0.5px 2px 1px rgba(20, 71, 57, 0.4) !important;
-  --slider-handle-ring-color: transparent;
-  --slider-height: 0.6rem;
-
-  margin: 2rem 0;
 }
 
 .button--container {
