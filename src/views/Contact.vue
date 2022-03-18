@@ -2,9 +2,7 @@
   <Breadcrumbs>Contact</Breadcrumbs>
 
   <section>
-    <div style="width: 100%">
-      <iframe frameborder="0" src="https://maps.google.com/maps?q=Onderwijsboulevard%203&amp;z=15&amp;ie=UTF8&amp;output=embed"></iframe>
-    </div>
+    <div id="map"></div>
   </section>
 
   <section class="form--section column--container">
@@ -49,8 +47,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { Map, Marker } from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 import Breadcrumbs from "../components/Breadcrumbs.vue";
+
+onMounted(() => {
+  const map = new Map({
+    accessToken: "pk.eyJ1IjoibWFya2llc2NoIiwiYSI6ImNrZ2NrcjZpYTA1cGMyeXMxOTZmanJxY2UifQ.MM8Hw3wYN6FYoVnE4dO5yg",
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v11?optimize=true",
+    center: [5.372594, 51.664729],
+    zoom: 3,
+    maxZoom: 9,
+  });
+
+  map.on("load", () => {
+    new Marker().setLngLat([5.372594, 51.664729]).addTo(map);
+  });
+});
 
 const name = ref("");
 const mail = ref("");
@@ -134,10 +149,10 @@ function validateMessage() {
 <style scoped lang="scss">
 @import "../styles/variables.scss";
 
-iframe {
-  width: 100%;
+#map {
   height: 25rem;
   max-height: 50vh;
+  background-color: #f5f5f5;
   border-radius: 0.5rem;
   margin-bottom: 4rem;
 }
