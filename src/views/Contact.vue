@@ -57,13 +57,13 @@ onMounted(() => {
     accessToken: "pk.eyJ1IjoibWFya2llc2NoIiwiYSI6ImNrZ2NrcjZpYTA1cGMyeXMxOTZmanJxY2UifQ.MM8Hw3wYN6FYoVnE4dO5yg",
     container: "map",
     style: "mapbox://styles/mapbox/streets-v11?optimize=true",
-    center: [5.372594, 51.664729],
-    zoom: 3,
-    maxZoom: 9,
+    center: [5.287758, 51.690708],
+    zoom: 8,
+    maxZoom: 16,
   });
 
   map.on("load", () => {
-    new Marker().setLngLat([5.372594, 51.664729]).addTo(map);
+    new Marker().setLngLat([5.287758, 51.690708]).addTo(map);
   });
 });
 
@@ -150,8 +150,8 @@ function validateMessage() {
 @import "../styles/variables.scss";
 
 #map {
-  height: 25rem;
-  max-height: 50vh;
+  height: 30rem;
+  max-height: 70vh;
   background-color: #f5f5f5;
   border-radius: 0.5rem;
   margin-bottom: 4rem;
