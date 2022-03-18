@@ -13,6 +13,7 @@
       <router-link :to="{ name: 'Adopt' }">Adopteren</router-link>
       <router-link :to="{ name: 'Nieuws' }">Nieuws</router-link>
       <router-link :to="{ name: 'About' }">Over ons</router-link>
+      <router-link :to="{ name: 'Contact' }">Contact</router-link>
     </div>
     <div class="link--container">
       <router-link :to="{ name: 'Donate' }">Doneren</router-link>
