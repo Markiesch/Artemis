@@ -42,7 +42,7 @@
 
   <section class="news--section">
     <h2 class="section--title">Laatste nieuws</h2>
-    <ArticleList :articles="[articles[0], articles[1], articles[2]]" />
+    <ArticleList :articles="articles.slice(0, 3)" />
   </section>
 
   <div class="newsletter--wrapper">
