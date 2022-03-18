@@ -1,10 +1,12 @@
+import { ref } from "vue";
+
 export interface IDonation {
   donator: string;
   email: string;
   amount: number;
 }
 
-export const donations: IDonation[] = [
+export const donations = ref([
   {
     donator: "Sjoerd Wendel",
     email: "sjoerdwendel@gmail.com",
@@ -45,15 +47,16 @@ export const donations: IDonation[] = [
     email: "a.verheul@gmail.com",
     amount: 7,
   },
-];
+]);
 
 export function addDonation(donator: string, email: string, amount: number) {
-  donations.push({ donator, email, amount });
+  donations.value.unshift({ donator, email, amount });
+  saveDonations();
 }
 
 export function getDonations(): IDonation[] {
   const storageDonations = localStorage.getItem("donations");
-  if (!storageDonations) return donations;
+  if (!storageDonations) return donations.value;
   return JSON.parse(storageDonations);
 }
 
