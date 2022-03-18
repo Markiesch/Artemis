@@ -1,10 +1,19 @@
 <template>
   <Breadcrumbs>Contact</Breadcrumbs>
 
-  <section class="column--container">
+  <section>
+    <div style="width: 100%">
+      <iframe frameborder="0" src="https://maps.google.com/maps?q=Onderwijsboulevard%203&amp;z=15&amp;ie=UTF8&amp;output=embed"></iframe>
+    </div>
+  </section>
+
+  <section class="form--section column--container">
     <article>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quisquam ducimus officia mollitia, consequatur illo eveniet veniam similique iure ratione dignissimos nesciunt quis molestias optio
-      voluptatum quo debitis eum explicabo.
+      <h2 class="section--title">Neem contact op</h2>
+      <p>Artemis</p>
+      <p>Onderwijsboulevard 3</p>
+      <p>5223 DE 's-Hertogenbosch</p>
+      <p>Nederland, EU</p>
     </article>
     <form @submit.prevent>
       <div class="input--container">
@@ -125,9 +134,31 @@ function validateMessage() {
 <style scoped lang="scss">
 @import "../styles/variables.scss";
 
-.input--container {
+iframe {
   width: 100%;
+  height: 25rem;
+  max-height: 50vh;
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.form--section {
+  h2 {
+    color: $primary-color;
+    padding-bottom: 1rem;
+  }
+
+  p {
+    color: $text-color;
+  }
+}
+
+form > * {
   max-width: 30rem;
+  width: 100%;
+}
+
+.input--container {
   margin-bottom: 1rem;
 
   .error {
