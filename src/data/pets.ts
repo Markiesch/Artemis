@@ -51,7 +51,7 @@ export const pets: IPet[] = [
   {
     name: "Gavin",
     description: "TODO",
-    filter: "Konijn",
+    filter: "Konijnen",
     image: "gavin.jpg",
   },
 ];
