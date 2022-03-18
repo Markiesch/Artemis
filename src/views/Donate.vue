@@ -16,7 +16,7 @@
       </svg>
     </div>
 
-    <VueSlider v-model="amount" tooltip-formatter="€{value}" tooltip="always" :min="1" :max="300" />
+    <VueSlider class="range--slider" v-model="amount" tooltip-formatter="€{value}" tooltip="always" :min="1" :max="300" />
     <div class="button--container">
       <div :class="{ active: amount == 15 }" @click="amount = 15">€15</div>
       <div :class="{ active: amount == 30 }" @click="amount = 30">€30</div>
@@ -127,12 +127,15 @@ function validateMail() {
   }
 }
 
+.range--slider {
+  margin: 4rem 0;
+}
+
 .button--container {
   display: flex;
   flex-wrap: wrap;
   margin: -0.5rem;
   cursor: pointer;
-  margin-top: 3rem;
 
   & > div {
     display: flex;
