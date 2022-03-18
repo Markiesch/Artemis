@@ -23,7 +23,7 @@
       <div :class="{ active: amount == 100 }" @click="amount = 100">€100</div>
       <div>
         <span>€</span>
-        <input type="number" v-model="amount" />
+        <input min="1" type="number" v-model="amount" />
       </div>
     </div>
     <div class="last-step" :class="{ show: showLastStep }">
@@ -47,9 +47,11 @@
 
 <script setup lang="ts">
 import VueSlider from "vue-slider-component";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const amount = ref(50);
+watch(amount, () => (amount.value = amount.value < 1 ? 1 : amount.value));
+
 const showLastStep = ref(false);
 const name = ref("");
 const nameError = ref("");
