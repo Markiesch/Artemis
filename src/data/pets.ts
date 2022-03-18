@@ -25,9 +25,33 @@ export const pets: IPet[] = [
     image: "mocha.jpg",
   },
   {
+    name: "sammy",
+    description: "TODO",
+    filter: "Konijnen",
+    image: "sammy.jpg",
+  },
+  {
     name: "Crosby",
     description: "TODO",
     filter: "Honden",
     image: "crosby.jpg",
+  },
+  {
+    name: "Jamie",
+    description: "TODO",
+    filter: "Honden",
+    image: "jamie.jpg",
+  },
+  {
+    name: "Sassy",
+    description: "TODO",
+    filter: "Katten",
+    image: "sassy.jpg",
+  },
+  {
+    name: "Gavin",
+    description: "TODO",
+    filter: "Konijn",
+    image: "gavin.jpg",
   },
 ];
