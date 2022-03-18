@@ -42,12 +42,17 @@
       </div>
     </div>
     <button @click="donate">Doneer €{{ amount }}</button>
+
+    <section>
+      <div v-for="donation in donations">{{ donation.donator }}</div>
+    </section>
   </section>
 </template>
 
 <script setup lang="ts">
 import VueSlider from "vue-slider-component";
 import { ref, watch } from "vue";
+import { addDonation, donations } from "../data/donations";
 
 const amount = ref(50);
 watch(amount, () => (amount.value = amount.value < 1 ? 1 : amount.value));
@@ -62,7 +67,8 @@ function donate() {
   if (!showLastStep.value) return (showLastStep.value = true);
 
   if (!validateForm()) return;
-  alert("Bedankt voor uw donatie!");
+
+  addDonation(name.value, mail.value, amount.value);
 }
 
 function validateForm(): boolean {
