@@ -16,13 +16,13 @@
       </svg>
     </div>
 
-    <VueSlider class="range--slider" v-model="amount" tooltip-formatter="€{value}" tooltip="always" :min="1" :max="300" />
+    <VueSlider class="range--slider" v-model="amount" tooltip-formatter="&euro;{value}" tooltip="always" :min="1" :max="300" />
     <div class="button--container">
-      <div :class="{ active: amount == 15 }" @click="amount = 15">€15</div>
-      <div :class="{ active: amount == 30 }" @click="amount = 30">€30</div>
-      <div :class="{ active: amount == 100 }" @click="amount = 100">€100</div>
+      <div :class="{ active: amount == 15 }" @click="amount = 15">&euro;15</div>
+      <div :class="{ active: amount == 30 }" @click="amount = 30">&euro;30</div>
+      <div :class="{ active: amount == 100 }" @click="amount = 100">&euro;100</div>
       <div>
-        <span>€</span>
+        <span>&euro;</span>
         <input min="1" type="number" v-model="amount" />
       </div>
     </div>
@@ -39,20 +39,56 @@
         <label for="emailadres">Emailadres</label>
         <input :class="{ error: mailError }" v-model="mail" @blur="validateMail" @input="mailError = ''" type="text" id="emailadres" />
         <p v-if="mailError">{{ mailError }}</p>
+
+        <label for="message">Bericht (optioneel)</label>
+        <textarea v-model="message" id="message"></textarea>
       </div>
     </div>
-    <button @click="donate">Doneer €{{ amount }}</button>
+    <button @click="donate">Doneer &euro;{{ amount }}</button>
+  </section>
 
-    <section>
-      <div v-for="donation in donations">{{ donation.donator }}</div>
-    </section>
+  <section class="stats--section column--container">
+    <!-- Latest donators -->
+    <article class="donate--information">
+      <h2 class="large--section--title">Donateurs die u voor waren</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, adipisci excepturi a porro hic ipsam incidunt soluta consequuntur iusto perspiciatis, quis saepe nihil. Ipsum officiis
+        excepturi sint quisquam, libero numquam.
+      </p>
+      <div class="donation--container" v-for="donation in donations.slice(0, 5)">
+        <div class="svg--container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+          </svg>
+        </div>
+        <div>
+          <p class="donator">{{ donation.donator }}</p>
+          <p class="message">
+            <span v-if="donation.message">{{ donation.message }}</span>
+            <i v-else>Geen bericht</i>
+          </p>
+        </div>
+        <p class="amount">&euro;{{ donation.amount }}</p>
+      </div>
+    </article>
+
+    <!-- Donation stats -->
+    <article class="donate--stats">
+      <h3>&euro;{{ getTotal() }}</h3>
+      <div class="goal--container">
+        <div class="current--container" :style="`width: ${getPercentage()}%; max-width: 100%`">{{ getPercentage() }}%</div>
+      </div>
+      <p>
+        <span>{{ donations.length }}</span> donateurs
+      </p>
+    </article>
   </section>
 </template>
 
 <script setup lang="ts">
 import VueSlider from "vue-slider-component";
 import { ref, watch } from "vue";
-import { addDonation, donations } from "../data/donations";
+import { addDonation, donations, getTotal, getPercentage } from "../data/donations";
 
 const amount = ref(50);
 watch(amount, () => (amount.value = amount.value < 1 ? 1 : amount.value));
@@ -62,13 +98,14 @@ const name = ref("");
 const nameError = ref("");
 const mail = ref("");
 const mailError = ref("");
+const message = ref("");
 
 function donate() {
   if (!showLastStep.value) return (showLastStep.value = true);
 
   if (!validateForm()) return;
 
-  addDonation(name.value, mail.value, amount.value);
+  addDonation(name.value, mail.value, amount.value, message.value);
 }
 
 function validateForm(): boolean {
@@ -121,13 +158,13 @@ function validateMail() {
     margin: 0 auto;
     padding-bottom: 2rem;
   }
-}
 
-.svg--container {
-  height: 20rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .svg--container {
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   svg {
     transition: height 300ms linear;
@@ -211,9 +248,12 @@ function validateMail() {
     cursor: pointer;
   }
 
-  input {
+  input,
+  textarea {
     padding: 0.5rem;
+    width: 100%;
     border-radius: 0.25rem;
+    resize: vertical;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
 
@@ -236,5 +276,109 @@ button {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1;
+}
+
+.stats--section {
+  justify-content: center;
+  padding-top: 15rem;
+
+  @include tablet {
+    text-align: center;
+  }
+}
+
+.donate--information {
+  h2 {
+    color: $primary-color;
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  & > p {
+    color: $text-color;
+    padding: 1.5rem 0;
+  }
+
+  .donation--container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+    max-width: 30rem;
+
+    .svg--container {
+      padding-right: 1rem;
+    }
+
+    svg {
+      height: 2rem;
+      fill: $title-color;
+    }
+  }
+
+  .donator {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $title-color;
+    line-height: 1;
+    padding-bottom: 0.5rem;
+
+    span {
+      color: $secondary-color;
+    }
+  }
+
+  .message {
+    color: $text-color;
+  }
+
+  .amount {
+    color: $secondary-color;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+}
+
+.donate--stats {
+  text-align: right;
+
+  @include tablet {
+    padding-left: 0;
+  }
+
+  .goal--container {
+    width: 100%;
+    background-color: $secondary-accent-color;
+    border-radius: 0.25rem;
+  }
+
+  .current--container {
+    background-color: $secondary-color;
+    padding: 0.25rem;
+    border-radius: inherit;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    color: $secondary-color;
+    font-size: 6rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: $text-color;
+    font-size: 1.25rem;
+
+    span {
+      color: $secondary-color;
+    }
+  }
 }
 </style>
