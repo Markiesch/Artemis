@@ -18,6 +18,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100%;
 }
 
 h1 {
