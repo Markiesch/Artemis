@@ -1,7 +1,9 @@
 export interface IPet {
   name: string;
-  description: string;
+  breed: string;
+  size: "Klein" | "Gemiddeld" | "Groot";
   gender: string;
+  color: string;
   filter: string;
   image: string;
 }
@@ -9,57 +11,73 @@ export interface IPet {
 export const pets: IPet[] = [
   {
     name: "Zana",
-    description: "TODO",
+    breed: "Shiba",
+    size: "Klein",
     gender: "Man",
+    color: "Grijs, Wit",
     filter: "Honden",
     image: "zana.jpg",
   },
   {
     name: "Peggy",
-    description: "TODO",
+    breed: "Labrador retriever",
+    size: "Groot",
     gender: "Man",
+    color: "Zwart",
     filter: "Honden",
     image: "peggy.jpg",
   },
   {
     name: "Mocha",
-    description: "TODO",
+    breed: "Ragamuffin",
+    size: "Klein",
     gender: "Vrouw",
+    color: "Wit",
     filter: "Katten",
     image: "mocha.jpg",
   },
   {
-    name: "sammy",
-    description: "TODO",
+    name: "Sammy",
+    breed: "Steenkonijn",
+    size: "Klein",
     gender: "Vrouw",
+    color: "Lichtbruin",
     filter: "Konijnen",
     image: "sammy.jpg",
   },
   {
     name: "Crosby",
-    description: "TODO",
+    breed: "Drentsche Patrijshond",
+    size: "Gemiddeld",
     gender: "Man",
+    color: "Bruin, Wit",
     filter: "Honden",
     image: "crosby.jpg",
   },
   {
     name: "Jamie",
-    description: "TODO",
+    breed: "Kooikerhondje",
+    size: "Gemiddeld",
     gender: "Man",
+    color: "Lichtbruin",
     filter: "Honden",
     image: "jamie.jpg",
   },
   {
     name: "Sassy",
-    description: "TODO",
+    breed: "Noorse boskat",
+    size: "Gemiddeld",
     gender: "Vrouw",
+    color: "Zwart, Bruin",
     filter: "Katten",
     image: "sassy.jpg",
   },
   {
     name: "Gavin",
-    description: "TODO",
+    breed: "Hollander",
+    size: "Klein",
     gender: "Man",
+    color: "Donkergrijs, Wit",
     filter: "Konijnen",
     image: "gavin.jpg",
   },
