@@ -4,6 +4,7 @@ export interface IDonation {
   donator: string;
   email: string;
   amount: number;
+  message?: string;
 }
 
 export const donationTarget = 1200;
@@ -13,11 +14,13 @@ export const donations = ref<IDonation[]>([
     donator: "Sjoerd Wendel",
     email: "sjoerdwendel@gmail.com",
     amount: 10,
+    message: "Zet hem op!",
   },
   {
     donator: "Matthijs Verkerk",
     email: "matthijs.v@gmail.com",
     amount: 26,
+    message: "Koop er iets leuk van",
   },
   {
     donator: "Robin Schutte",
@@ -28,6 +31,7 @@ export const donations = ref<IDonation[]>([
     donator: "Daniel Kok",
     email: "daniel.kok@gmail.com",
     amount: 80,
+    message: "Een creatief bericht",
   },
   {
     donator: "Lenie Moerman",
@@ -43,6 +47,7 @@ export const donations = ref<IDonation[]>([
     donator: "Jens Huisman",
     email: "huisman.jens@yahoo.com",
     amount: 14,
+    message: "Zet hem op",
   },
   {
     donator: "Arie Verheul",
@@ -56,8 +61,8 @@ export function initDonations() {
   if (storageDonations) donations.value = JSON.parse(storageDonations);
 }
 
-export function addDonation(donator: string, email: string, amount: number) {
-  donations.value.unshift({ donator, email, amount });
+export function addDonation(donator: string, email: string, amount: number, message: string) {
+  donations.value.unshift({ donator, email, amount, message });
   saveDonations();
 }
 
