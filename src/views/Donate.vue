@@ -92,7 +92,7 @@ import VueSlider from "vue-slider-component";
 import { ref, watch } from "vue";
 import { addDonation, donations, getTotal, getPercentage } from "../data/donations";
 
-const amount = ref(50);
+const amount = ref(100);
 watch(amount, () => (amount.value = amount.value < 1 ? 1 : amount.value));
 
 const showLastStep = ref(false);
