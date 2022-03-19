@@ -6,6 +6,8 @@ export interface IDonation {
   amount: number;
 }
 
+export const donationTarget = 1200;
+
 export const donations = ref([
   {
     donator: "Sjoerd Wendel",
@@ -47,6 +49,11 @@ export const donations = ref([
     email: "a.verheul@gmail.com",
     amount: 7,
   },
+  {
+    donator: "Arie Verheul",
+    email: "a.verheul@gmail.com",
+    amount: 1109,
+  },
 ]);
 
 export function initDonations() {
@@ -57,6 +64,14 @@ export function initDonations() {
 export function addDonation(donator: string, email: string, amount: number) {
   donations.value.unshift({ donator, email, amount });
   saveDonations();
+}
+
+export function getTotal() {
+  return donations.value.reduce((total, donation) => total + donation.amount, 0);
+}
+
+export function getPercentage() {
+  return Math.round((getTotal() * 100) / donationTarget);
 }
 
 function saveDonations() {
