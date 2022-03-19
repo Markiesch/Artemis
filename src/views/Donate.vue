@@ -2,8 +2,8 @@
   <section class="donate--section">
     <h1 class="large--section--title">Wij willen samen met u het verschil maken</h1>
     <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam iure, sunt ullam illum id voluptatem quae! Inventore distinctio eius vel reprehenderit laborum! Vero nisi officiis, labore esse
-      voluptas amet iure quibusdam tempora atque id veritatis eos! Reprehenderit illo facere voluptas.
+      Door een bijdrage, klein of groot, maakt u het ons mogelijk om dieren op te vangen in de regio Den Bosch. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium commodi sed
+      alias ipsa dignissimos excepturi similique voluptate. Eum, ducimus.
     </p>
     <div class="svg--container">
       <svg :style="`height: clamp(25%, ${amount / 2}%, 100%)`" viewBox="0 0 162 175" fill="none">
@@ -44,6 +44,7 @@
         <textarea v-model="message" id="message"></textarea>
       </div>
     </div>
+    <p v-if="showFeedbackMessage">Bedankt voor uw donatie!</p>
     <button @click="donate">Doneer &euro;{{ amount }}</button>
   </section>
 
@@ -101,6 +102,7 @@ const nameError = ref("");
 const mail = ref("");
 const mailError = ref("");
 const message = ref("");
+const showFeedbackMessage = ref(false);
 
 const showAllDonators = ref(false);
 
@@ -109,7 +111,11 @@ function donate() {
 
   if (!validateForm()) return;
 
+  showFeedbackMessage.value = true;
   addDonation(name.value, mail.value, amount.value, message.value);
+  name.value = "";
+  mail.value = "";
+  message.value = "";
 }
 
 function validateForm(): boolean {

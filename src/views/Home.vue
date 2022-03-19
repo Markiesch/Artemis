@@ -20,11 +20,12 @@
 
   <section class="donate--section column--container">
     <article class="donate--information">
-      <h2 class="large--section--title">Wij willen samen het verschil maken</h2>
+      <h2 class="large--section--title">Samen maken wij het verschil</h2>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id dolor earum quasi velit veritatis, molestias quam optio recusandae commodi consectetur veniam consequatur, eum autem ratione nihil
-        aliquam sunt? Saepe, commodi?
+        Door een bijdrage, klein of groot, maakt u het ons mogelijk om dieren op te vangen in de regio Den Bosch. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium commodi sed
+        alias ipsa dignissimos excepturi similique voluptate. Eum, ducimus.
       </p>
+      <p>Help mee en wordt donateur!</p>
       <router-link :to="{ name: 'Donate' }">Doneren</router-link>
     </article>
     <article class="donate--stats">
