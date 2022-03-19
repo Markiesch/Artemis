@@ -47,12 +47,7 @@ export const donations = ref([
   {
     donator: "Arie Verheul",
     email: "a.verheul@gmail.com",
-    amount: 7,
-  },
-  {
-    donator: "Arie Verheul",
-    email: "a.verheul@gmail.com",
-    amount: 1109,
+    amount: 60,
   },
 ]);
 
