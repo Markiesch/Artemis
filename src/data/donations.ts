@@ -8,7 +8,7 @@ export interface IDonation {
 
 export const donationTarget = 1200;
 
-export const donations = ref([
+export const donations = ref<IDonation[]>([
   {
     donator: "Sjoerd Wendel",
     email: "sjoerdwendel@gmail.com",
