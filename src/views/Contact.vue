@@ -78,11 +78,7 @@ const phoneError = ref("");
 const messageError = ref("");
 
 function validateForm() {
-  if (!validateName()) return;
-  if (!validateMail()) return;
-  if (!validatePhone()) return;
-  if (!validateMessage()) return;
-
+  if (!validateName() || !validateMail() || !validatePhone() || !validateMessage()) return;
   alert("Het bericht is verzonden");
 }
 
