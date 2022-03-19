@@ -49,17 +49,16 @@ export const donations = ref([
   },
 ]);
 
+export function initDonations() {
+  const storageDonations = localStorage.getItem("donations");
+  if (storageDonations) donations.value = JSON.parse(storageDonations);
+}
+
 export function addDonation(donator: string, email: string, amount: number) {
   donations.value.unshift({ donator, email, amount });
   saveDonations();
 }
 
-export function getDonations(): IDonation[] {
-  const storageDonations = localStorage.getItem("donations");
-  if (!storageDonations) return donations.value;
-  return JSON.parse(storageDonations);
-}
-
 function saveDonations() {
-  localStorage.setItem("donations", JSON.stringify(donations));
+  localStorage.setItem("donations", JSON.stringify(donations.value));
 }
