@@ -11,7 +11,7 @@
 
       <article>
         <p>Laatste Nieuws</p>
-        <router-link v-for="article in articles" :to="{ name: 'Article', params: { id: article.id } }">{{ article.title }}</router-link>
+        <router-link v-for="article in articles.slice(0, 3)" :to="{ name: 'Article', params: { id: article.id } }">{{ article.title }}</router-link>
       </article>
     </footer>
   </div>
