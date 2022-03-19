@@ -28,11 +28,13 @@
       <router-link :to="{ name: 'Donate' }">Doneren</router-link>
     </article>
     <article class="donate--stats">
-      <h3>&euro;349</h3>
+      <h3>&euro;{{ getTotal() }}</h3>
       <div class="goal--container">
-        <div class="current--container" :style="`width: 49%`">49%</div>
+        <div class="current--container" :style="`width: ${getPercentage()}%; max-width: 100%`">{{ getPercentage() }}%</div>
       </div>
-      <p><span>62</span> donateurs</p>
+      <p>
+        <span>{{ donations.length }}</span> donateurs
+      </p>
     </article>
   </section>
 
@@ -84,6 +86,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { articles } from "../data/articles";
+import { donations, getTotal, getPercentage } from "../data/donations";
 import Slider from "../components/Slider.vue";
 import ArticleList from "../components/ArticleList.vue";
 
