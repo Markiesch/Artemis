@@ -17,6 +17,9 @@ import Footer from "./components/Footer.vue";
 @import "./styles/mixins.scss";
 
 $themeColor: $primary-color;
+$tooltipFontSize: 1.25rem;
+$tooltipPadding: 0.3em 0.75em;
+$tooltipArrow: 1rem;
 @import "vue-slider-component/lib/theme/default.scss";
 
 * {
