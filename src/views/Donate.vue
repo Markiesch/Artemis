@@ -55,7 +55,7 @@
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, adipisci excepturi a porro hic ipsam incidunt soluta consequuntur iusto perspiciatis, quis saepe nihil. Ipsum officiis
         excepturi sint quisquam, libero numquam.
       </p>
-      <div class="donation--container" v-for="donation in donations.slice(0, 5)">
+      <div class="donation--container" v-for="donation in showAllDonators ? donations : donations.slice(0, 5)">
         <div class="svg--container">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
@@ -70,6 +70,8 @@
         </div>
         <p class="amount">&euro;{{ donation.amount }}</p>
       </div>
+      <i v-if="showAllDonators" @click="showAllDonators = !showAllDonators"><span>toon laatste 5</span></i>
+      <i v-else>en {{ donations.length - 5 }} andere - <span @click="showAllDonators = !showAllDonators">toon alle donateurs</span></i>
     </article>
 
     <!-- Donation stats -->
@@ -99,6 +101,8 @@ const nameError = ref("");
 const mail = ref("");
 const mailError = ref("");
 const message = ref("");
+
+const showAllDonators = ref(false);
 
 function donate() {
   if (!showLastStep.value) return (showLastStep.value = true);
@@ -137,7 +141,6 @@ function validateMail() {
 
 <style scoped lang="scss">
 @import "../styles/variables.scss";
-@import "../styles/mixins.scss";
 
 .donate--section {
   text-align: center;
@@ -281,10 +284,6 @@ button {
 .stats--section {
   justify-content: center;
   padding-top: 15rem;
-
-  @include tablet {
-    text-align: center;
-  }
 }
 
 .donate--information {
@@ -294,9 +293,18 @@ button {
     font-weight: 800;
   }
 
-  & > p {
+  h2 + p {
     color: $text-color;
     padding: 1.5rem 0;
+  }
+
+  i {
+    color: $text-color;
+
+    span {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 
   .donation--container {
@@ -304,7 +312,7 @@ button {
     grid-template-columns: auto 1fr auto;
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0.75rem;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 0.25rem;
     max-width: 30rem;
 
@@ -344,10 +352,6 @@ button {
 
 .donate--stats {
   text-align: right;
-
-  @include tablet {
-    padding-left: 0;
-  }
 
   .goal--container {
     width: 100%;
