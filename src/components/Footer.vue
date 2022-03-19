@@ -1,6 +1,6 @@
 <template>
-  <div class="footer-wrapper">
-    <footer class="column--container">
+  <footer>
+    <section class="column--container">
       <article>
         <p>Artemis</p>
         <router-link :to="{ name: 'Home' }">Home</router-link>
@@ -13,8 +13,8 @@
         <p>Laatste Nieuws</p>
         <router-link v-for="article in articles.slice(0, 3)" :to="{ name: 'Article', params: { id: article.id } }">{{ article.title }}</router-link>
       </article>
-    </footer>
-  </div>
+    </section>
+  </footer>
 </template>
 
 <script setup lang="ts">
@@ -24,50 +24,30 @@ import { articles } from "../data/articles";
 <style lang="scss">
 @import "../styles/variables.scss";
 
-.footer-wrapper {
+footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: 3rem 0;
-}
-
-footer {
   color: $title-color;
+
+  article {
+    display: flex;
+    flex-direction: column;
+  }
 
   p {
     font-weight: 600;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
   }
 
   a {
-    display: block;
     line-height: 1.6;
+    width: max-content;
   }
 
   .router-link-exact-active {
     font-weight: 600;
     text-decoration: underline;
-  }
-
-  input,
-  button {
-    display: block;
-    width: 100%;
-    max-width: 30rem;
-    border-radius: 0.25rem;
-    border: none;
-    text-align: left;
-    padding: 0.75em;
-    font-size: 1rem;
-  }
-
-  input:focus {
-    outline: none;
-  }
-
-  button {
-    background-color: black;
-    margin-top: 0.5rem;
-    color: white;
-    font-weight: 500;
   }
 }
 </style>

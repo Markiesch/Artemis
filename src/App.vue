@@ -37,8 +37,7 @@ main {
 }
 
 nav,
-section,
-footer {
+section {
   width: 90%;
   max-width: 90rem;
   margin: 0 auto;
