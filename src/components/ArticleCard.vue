@@ -1,6 +1,6 @@
 <template>
   <article v-if="article">
-    <img :src="`/assets/${article.image}`" :alt="article.title" />
+    <img :src="`/assets/news/${article.image}`" :alt="article.title" />
     <div class="details">
       <div>
         <p class="date">{{ article.date }}</p>

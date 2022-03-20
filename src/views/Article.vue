@@ -9,7 +9,7 @@
   </Breadcrumbs>
 
   <section v-if="article">
-    <img :src="`/assets/${article.image}`" alt="" />
+    <img :src="`/assets/news/${article.image}`" alt="" />
     <p class="content" v-for="text in article.content">{{ text }}</p>
   </section>
 </template>
