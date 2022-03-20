@@ -200,7 +200,7 @@ form > * {
 .checkbox--container {
   display: flex;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0 1.5rem 0;
 
   input {
     margin-right: 0.5rem;
@@ -220,5 +220,6 @@ button {
   padding: 1rem;
   border: none;
   border-radius: 0.25rem;
+  cursor: pointer;
 }
 </style>
