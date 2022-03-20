@@ -60,7 +60,7 @@
     </section>
   </div>
 
-  <section class="about--section column--container">
+  <section class="about--section">
     <article>
       <h2 class="section--title">Over ons</h2>
       <p>
@@ -79,7 +79,7 @@
       <p>Omdat ieder dier een tweede kans verdient!</p>
     </article>
     <article>
-      <!-- <img src="" alt="" /> -->
+      <img src="/assets/about2.jpg" alt="Hond met baasje kijken naar dalgebied" />
     </article>
   </section>
 </template>
@@ -304,6 +304,9 @@ function sendMail() {
 
 .about--section {
   padding-top: 5rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
 
   p {
     padding-top: 1rem;
@@ -313,6 +316,18 @@ function sendMail() {
 
   h2 {
     color: $primary-color;
+  }
+
+  article + article {
+    padding-left: 10rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.25rem;
   }
 }
 </style>
