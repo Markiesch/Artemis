@@ -6,7 +6,7 @@
         <p class="date">{{ article.date }}</p>
       </div>
       <h2>{{ article.title }}</h2>
-      <p style="flex-grow: 1">{{ article.subtitle }}</p>
+      <p class="subtitle">{{ article.subtitle }}</p>
       <router-link :to="{ name: 'Article', params: { id: article.id } }">Lees verder</router-link>
     </div>
   </article>
@@ -40,27 +40,30 @@ img {
   flex-direction: column;
 }
 
+.date {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgb(245, 245, 245);
+  color: $title-color;
+  line-height: 1;
+  border-radius: 0.25rem;
+}
+
 h2 {
   color: $primary-color;
   font-size: 1.75rem;
   line-height: 1.2;
 }
 
-p {
+.subtitle {
   margin: 0.75rem 0;
   color: $text-color;
+  flex-grow: 1;
 }
 
 a {
   color: $secondary-color;
   text-decoration: underline;
-}
-
-.date {
-  background-color: rgb(245, 245, 245);
-  display: inline-block;
-  padding: 0.75rem;
-  line-height: 1;
-  border-radius: 0.25rem;
 }
 </style>
