@@ -6,6 +6,7 @@ export interface IArticle {
   subtitle: string;
   content: string[];
   image: string;
+  bigImage: string;
 }
 
 export const articles: IArticle[] = [
@@ -26,6 +27,7 @@ export const articles: IArticle[] = [
       aan de vreselijke gevolgen die het niet vaccineren van huisdieren kan hebben.`,
     ],
     image: "news1.jpg",
+    bigImage: "news1.jpg",
   },
   {
     id: 4,
@@ -41,6 +43,7 @@ export const articles: IArticle[] = [
        De hondjes waren nog geen dag oud, het navelstrengetje zat er nog aan. Helaas was vanaf het begin te zien dat het met een van de drie puppy’s niet goed ging. `,
     ],
     image: "news2.jpg",
+    bigImage: "news2-big.jpg",
   },
   {
     id: 3,
@@ -58,32 +61,52 @@ export const articles: IArticle[] = [
        Die hulp gaat dag en nacht door, ook in tijden van corona. We zijn onze collectanten daarom extra dankbaar voor hun tijd en inzet en we hopen dat deze inzet wordt beloond.`,
     ],
     image: "news3.jpg",
+    bigImage: "news3-big.jpg",
   },
   {
     id: 2,
     date: "23 augustus, 2021",
     author: "Rob Wessels",
-    title: "Titel nieuwsartikel",
-    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat culpa quis quibusdam eius. Debitis recusandae quae minima sequi explicabo quos obcaecati porro praesentium est dolorum voluptate perferendis, id accusantium.`,
-    content: ["TODO"],
+    title: "Het gaat goed met Sassy!",
+    subtitle: `Hij maakt het goed en iedereen van de dierenkliniek is verliefd op hem. Mini is de eerste dagen met een assistente mee naar huis geweest omdat hij drie keer per dag een 
+               verbandwissel nodig had.`,
+    content: [
+      `Hij maakt het goed en iedereen van de dierenkliniek is verliefd op hem. Mini is de eerste dagen met een assistente mee naar huis geweest omdat hij drie keer per dag een 
+       verbandwissel nodig had. Gisteren is hij uit de kliniek 'ontslagen'. Hij logeert nu bij een gastgezin om verder te herstellen en heel erg verwend te worden. Over drie 
+       weken volgt een tweede operatie. Het streefbedrag van onze crowdfundactie is bijna behaald. Help jij mee met de laatste loodjes? Alvast heel erg bedankt namens Mini!`,
+    ],
     image: "news4.jpg",
+    bigImage: "news4-big.jpg",
   },
   {
     id: 1,
     date: "18 juli, 2021",
     author: "Mark Schuurmans",
-    title: "Titel nieuwsartikel",
-    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat culpa quis quibusdam eius. Debitis recusandae quae minima sequi explicabo quos obcaecati porro praesentium est dolorum voluptate perferendis, id accusantium.`,
-    content: ["TODO"],
-    image: "slider3.jpg",
+    title: "ER KOMT WEER EEN OPEN DAG AAN!",
+    subtitle: `Ons maandelijks terugkerende open dag komt er weer aan. Houd je agenda vrij op maandag 13 juni tussen 14.00 uur en 17.00 uur.`,
+    content: [
+      `Op maandag 13 september opent Artemis weer haar deuren weer voor het publiek tijdens de open dag. Het gehele jaar staat in het teken van onze asieldieren, maar 
+       eens per jaar is het mogelijk om een kijkje te nemen achter de deuren van onze dierenopvang. Er is een rondleiding die je kunt volgen en voor de kinderen wordt een 
+       leuke quiz georganiseerd om zo meer te weten te komen over ons asiel. Zo ontdekken jullie leuke weetjes over de dieren en natuurlijk kunnen de dieren bezichtigd worden.`,
+    ],
+    image: "news5.jpg",
+    bigImage: "news5-big.jpg",
   },
   {
     id: 0,
     date: "3 juni, 2021",
     author: "Remco Evers",
-    title: "Titel nieuwsartikel",
-    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat culpa quis quibusdam eius. Debitis recusandae quae minima sequi explicabo quos obcaecati porro praesentium est dolorum voluptate perferendis, id accusantium.`,
-    content: ["TODO"],
-    image: "slider3.jpg",
+    title: "Gavin zoekt een baasje",
+    subtitle: `Na maanden van opereren en revalideren is Gavin eindelijk goedgekeurd door de oorspecialist van het Medisch Centrum voor Dieren in Amsterdam. 
+               Gavin mag nu eindelijk een eigen huis gaan zoeken!`,
+    content: [
+      `Na maanden van opereren en revalideren is Gavin eindelijk goedgekeurd door de oorspecialist van het Medisch Centrum voor Dieren in Amsterdam. 
+       Gavin mag nu eindelijk een eigen huis gaan zoeken!`,
+      `Celsius is een 3 jaar oude cypers met witte kater. Hij heeft een moeilijke start gehad hier in het asiel waardoor hij niet meteen plaatsbaar was. 
+       Hij had in het begin problemen met zijn oor en dit is ondertussen allemaal goed gekomen. Na vier operaties en heel veel liefdevolle verzorging, heeft iedereen 
+       bij de SDO ondertussen zijn hart aan Celsius verloren. Toch is het tijd dat hij nu op zoek gaat naar zijn eigen stekkie.`,
+    ],
+    image: "news6.jpg",
+    bigImage: "news6-big.jpg",
   },
 ];
