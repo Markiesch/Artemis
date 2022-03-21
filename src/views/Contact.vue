@@ -33,7 +33,8 @@
       </div>
       <div class="input--container">
         <label for="message">Vraag/opmerking</label>
-        <textarea :class="{ error: messageError }" v-model="message" @blur="validatePhone" @input="messageError = ''" id="message"></textarea>
+        <textarea :class="{ error: messageError }" v-model="message" @blur="validateMessage" @input="messageError = ''" id="message"></textarea>
+        <p>{{ messageError }}</p>
       </div>
 
       <div class="checkbox--container">
