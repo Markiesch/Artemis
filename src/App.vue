@@ -12,11 +12,11 @@ import Footer from "./components/Footer.vue";
 </script>
 
 <style lang="scss">
-@import "./styles/typography.scss";
-@import "./styles/variables.scss";
-@import "./styles/mixins.scss";
+@use "./styles/abstracts/variables" as *;
+@use "./styles/abstracts/mixins" as *;
+@use "./styles/base/typography";
 
-$themeColor: $primary-color;
+$themeColor: $clr-primary-400;
 $tooltipFontSize: 1.25rem;
 $tooltipPadding: 0.3em 0.75em;
 $tooltipArrow: 1rem;
@@ -33,6 +33,11 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  color: $clr-neutral-400;
+}
+
+h1 {
+  color: $clr-neutral-800;
 }
 
 main {
@@ -40,7 +45,8 @@ main {
 }
 
 nav,
-section {
+section,
+footer {
   width: 90%;
   max-width: 90rem;
   margin: 0 auto;
@@ -49,14 +55,5 @@ section {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.column--container {
-  display: flex;
-  flex-wrap: wrap;
-
-  & > * {
-    flex: 1 1 20rem;
-  }
 }
 </style>

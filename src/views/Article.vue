@@ -50,6 +50,5 @@ img {
   padding-top: 1rem;
   line-height: 1.6;
   max-width: 120ch;
-  color: $text-color;
 }
 </style>

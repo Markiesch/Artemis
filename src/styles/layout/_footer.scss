@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as *;
+
+.border {
+  border-top: 1px solid $clr-neutral-100;
+}
+
+footer {
+  padding: 3rem 0;
+
+  article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    width: max-content;
+  }
+
+  .router-link-exact-active {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}

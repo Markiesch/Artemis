@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+
+.hero--title {
+  font-size: $fontsize-900;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.hero--subtitle {
+  font-size: 1.1rem;
+}
+
+.section--title {
+  font-size: $fontsize-700;
+}
+
+.large--section--title {
+  font-size: $fontsize-800;
+}
+
+.text-neutral-800 {
+  color: $clr-neutral-800;
+}
+
+.text-neatral-400 {
+  color: $clr-neutral-400;
+}

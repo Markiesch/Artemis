@@ -32,7 +32,7 @@ createInterval();
 </script>
 
 <style lang="scss">
-@import "../styles/variables.scss";
+@use "../styles/abstracts/variables" as *;
 
 .slider--container {
   overflow: hidden;
@@ -62,14 +62,14 @@ createInterval();
     width: 1rem;
     height: 1rem;
     margin: 1rem 0.25rem;
-    background-color: $secondary-accent-color;
+    background-color: $clr-secondary-100;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 300ms ease;
   }
 
   .active {
-    background-color: $secondary-color;
+    background-color: $clr-secondary-400;
   }
 }
 </style>

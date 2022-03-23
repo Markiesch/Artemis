@@ -1,12 +1,12 @@
 <template>
-  <article>
-    <img :src="`/assets/pets/${pet.image}`" :alt="pet.name" />
-    <div class="overlay">
+  <div class="card">
+    <img class="card__image" :src="`/assets/pets/${pet.image}`" :alt="pet.name" />
+    <div class="card__overlay">
       <p class="breed">{{ pet.breed }}</p>
       <h2 class="section--title">{{ pet.name }}</h2>
       <p>{{ pet.gender }} - {{ pet.size }} - {{ pet.color }}</p>
     </div>
-  </article>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -16,41 +16,41 @@ defineProps<{ pet: IPet }>();
 </script>
 
 <style scoped lang="scss">
-@import "../styles/variables.scss";
+@use "../styles/abstracts/variables" as *;
 
 $card-padding: 1.5rem;
 
-article {
+.card {
   position: relative;
   border-radius: 0.5rem;
   overflow: hidden;
 
-  img {
+  &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .overlay {
+  &__overlay {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    position: absolute;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7) 60%);
-    color: white;
     display: flex;
+    position: absolute;
+    color: white;
     flex-direction: column;
     justify-content: flex-end;
     padding: $card-padding;
+    background: linear-gradient(transparent, rgba(black, 0.7) 60%);
 
     opacity: 0;
     transform: translateY(25%);
     transition: transform 300ms ease, opacity 300ms ease;
   }
 
-  &:hover .overlay {
+  &:hover &__overlay {
     opacity: 1;
     transform: translateY(0);
   }
@@ -73,13 +73,7 @@ article {
     padding: 0.5rem $card-padding;
     border-radius: 0 0.5rem 0.5rem 0;
     color: white;
-    background-color: $primary-color;
-  }
-
-  svg {
-    height: 1.1rem;
-    margin-right: 0.5rem;
-    fill: currentColor;
+    background-color: $clr-primary-400;
   }
 }
 </style>

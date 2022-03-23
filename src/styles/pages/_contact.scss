@@ -1,0 +1,75 @@
+@use "../abstracts/variables" as *;
+
+#map {
+  height: 30rem;
+  max-height: 70vh;
+  background-color: #f5f5f5;
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.form--section {
+  h2 {
+    color: $clr-primary-400;
+    padding-bottom: 1rem;
+  }
+}
+
+form > * {
+  max-width: 30rem;
+  width: 100%;
+}
+
+.input--container {
+  margin-bottom: 1rem;
+
+  .error {
+    border: 1px solid red;
+  }
+
+  label {
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  input,
+  textarea {
+    border: 1px solid $clr-neutral-200;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+
+  p {
+    color: red;
+    font-size: 0.8rem;
+  }
+}
+
+.checkbox--container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0 1.5rem 0;
+
+  input {
+    margin-right: 0.5rem;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+button {
+  background-color: $clr-primary-400;
+  color: white;
+  width: 100%;
+  font-weight: 600;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}

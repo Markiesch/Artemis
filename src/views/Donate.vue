@@ -48,43 +48,45 @@
     <button @click="donate">Doneer &euro;{{ amount }}</button>
   </section>
 
-  <section class="stats--section column--container">
-    <!-- Latest donators -->
-    <article class="donate--information">
-      <h2 class="large--section--title">Donateurs die u voor waren</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, adipisci excepturi a porro hic ipsam incidunt soluta consequuntur iusto perspiciatis, quis saepe nihil. Ipsum officiis
-        excepturi sint quisquam, libero numquam.
-      </p>
-      <div class="donation--container" v-for="donation in showAllDonators ? donations : donations.slice(0, 5)">
-        <div class="svg--container">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-          </svg>
+  <section class="stats--section">
+    <Row>
+      <!-- Latest donators -->
+      <article class="donate--information">
+        <h2 class="large--section--title">Donateurs die u voor waren</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, adipisci excepturi a porro hic ipsam incidunt soluta consequuntur iusto perspiciatis, quis saepe nihil. Ipsum officiis
+          excepturi sint quisquam, libero numquam.
+        </p>
+        <div class="donation--container" v-for="donation in showAllDonators ? donations : donations.slice(0, 5)">
+          <div class="svg--container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          </div>
+          <div>
+            <p class="donator">{{ donation.donator }}</p>
+            <p class="message">
+              <span v-if="donation.message">{{ donation.message }}</span>
+              <i v-else>Geen bericht</i>
+            </p>
+          </div>
+          <p class="amount">&euro;{{ donation.amount }}</p>
         </div>
-        <div>
-          <p class="donator">{{ donation.donator }}</p>
-          <p class="message">
-            <span v-if="donation.message">{{ donation.message }}</span>
-            <i v-else>Geen bericht</i>
-          </p>
-        </div>
-        <p class="amount">&euro;{{ donation.amount }}</p>
-      </div>
-      <i v-if="showAllDonators" @click="showAllDonators = !showAllDonators"><span>toon laatste 5</span></i>
-      <i v-else>en {{ donations.length - 5 }} andere - <span @click="showAllDonators = !showAllDonators">toon alle donateurs</span></i>
-    </article>
+        <i v-if="showAllDonators" @click="showAllDonators = !showAllDonators"><span>toon laatste 5</span></i>
+        <i v-else>en {{ donations.length - 5 }} andere - <span @click="showAllDonators = !showAllDonators">toon alle donateurs</span></i>
+      </article>
 
-    <!-- Donation stats -->
-    <article class="donate--stats">
-      <h3>&euro;{{ getTotal() }}</h3>
-      <div class="goal--container">
-        <div class="current--container" :style="`width: ${getPercentage()}%; max-width: 100%`">{{ getPercentage() }}%</div>
-      </div>
-      <p>
-        <span>{{ donations.length }}</span> donateurs
-      </p>
-    </article>
+      <!-- Donation stats -->
+      <article class="donate--stats">
+        <h3>&euro;{{ getTotal() }}</h3>
+        <div class="goal--container">
+          <div class="current--container" :style="`width: ${getPercentage()}%; max-width: 100%`">{{ getPercentage() }}%</div>
+        </div>
+        <p>
+          <span>{{ donations.length }}</span> donateurs
+        </p>
+      </article>
+    </Row>
   </section>
 </template>
 
@@ -92,6 +94,7 @@
 import VueSlider from "vue-slider-component";
 import { ref, watch } from "vue";
 import { addDonation, donations, getTotal, getPercentage } from "../data/donations";
+import Row from "../components/Row.vue";
 
 const amount = ref(100);
 watch(amount, () => (amount.value = amount.value < 1 ? 1 : amount.value));
@@ -146,7 +149,7 @@ function validateMail() {
 </script>
 
 <style scoped lang="scss">
-@import "../styles/variables.scss";
+@import "../styles/abstracts/variables";
 
 .donate--section {
   text-align: center;
@@ -157,7 +160,7 @@ function validateMail() {
     max-width: 20ch;
     line-height: 1.1;
     margin: 0 auto;
-    color: $primary-color;
+    color: $clr-primary-400;
     padding-top: 4rem;
     padding-bottom: 2rem;
   }
@@ -177,7 +180,7 @@ function validateMail() {
 
   svg {
     transition: height 300ms linear;
-    stroke: $primary-color;
+    stroke: $clr-primary-400;
   }
 }
 
@@ -203,12 +206,12 @@ function validateMail() {
     font-size: 1.5rem;
     font-weight: 600;
     border-radius: 0.25rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid $clr-neutral-200;
   }
 
   .active {
-    border: 1px solid $primary-color;
-    background: linear-gradient($primary-accent-color, transparent);
+    border: 1px solid $clr-primary-400;
+    background: linear-gradient($clr-primary-100, transparent);
   }
 
   span {
@@ -263,7 +266,7 @@ function validateMail() {
     width: 100%;
     border-radius: 0.25rem;
     resize: vertical;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid $clr-neutral-200;
   }
 
   .error {
@@ -278,7 +281,7 @@ button {
   cursor: pointer;
 
   color: white;
-  background-color: $primary-color;
+  background-color: $clr-primary-400;
   border: none;
   border-radius: 5rem;
 
@@ -294,18 +297,18 @@ button {
 
 .donate--information {
   h2 {
-    color: $primary-color;
+    color: $clr-primary-400;
     line-height: 1.1;
     font-weight: 800;
   }
 
   h2 + p {
-    color: $text-color;
+    color: $clr-neutral-400;
     padding: 1.5rem 0;
   }
 
   i {
-    color: $text-color;
+    color: $clr-neutral-400;
 
     span {
       text-decoration: underline;
@@ -316,7 +319,7 @@ button {
   .donation--container {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid $clr-neutral-200;
     padding: 0.75rem;
     margin-bottom: 1rem;
     border-radius: 0.25rem;
@@ -328,28 +331,28 @@ button {
 
     svg {
       height: 2rem;
-      fill: $title-color;
+      fill: $clr-neutral-800;
     }
   }
 
   .donator {
     font-size: 1.25rem;
     font-weight: 600;
-    color: $title-color;
+    color: $clr-neutral-800;
     line-height: 1;
     padding-bottom: 0.5rem;
 
     span {
-      color: $secondary-color;
+      color: $clr-secondary-400;
     }
   }
 
   .message {
-    color: $text-color;
+    color: $clr-neutral-400;
   }
 
   .amount {
-    color: $secondary-color;
+    color: $clr-secondary-400;
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 1;
@@ -361,12 +364,12 @@ button {
 
   .goal--container {
     width: 100%;
-    background-color: $secondary-accent-color;
+    background-color: $clr-secondary-100;
     border-radius: 0.25rem;
   }
 
   .current--container {
-    background-color: $secondary-color;
+    background-color: $clr-secondary-400;
     padding: 0.25rem;
     border-radius: inherit;
     color: white;
@@ -376,18 +379,18 @@ button {
   }
 
   h3 {
-    color: $secondary-color;
+    color: $clr-secondary-400;
     font-size: 6rem;
     font-weight: 700;
   }
 
   p {
     margin-top: 1rem;
-    color: $text-color;
+    color: $clr-neutral-400;
     font-size: 1.25rem;
 
     span {
-      color: $secondary-color;
+      color: $clr-secondary-400;
     }
   }
 }

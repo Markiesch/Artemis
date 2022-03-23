@@ -26,8 +26,8 @@ import Breadcrumbs from "../components/Breadcrumbs.vue";
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/variables.scss";
-@import "../styles/mixins.scss";
+@import "../styles/abstracts/variables";
+@import "../styles/abstracts/mixins";
 
 img {
   width: 100%;
@@ -49,7 +49,7 @@ div {
 
 p {
   line-height: 1.6;
-  color: $title-color;
+  color: $clr-neutral-800;
 }
 
 p + p {

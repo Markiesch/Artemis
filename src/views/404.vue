@@ -11,35 +11,5 @@
 </template>
 
 <style scoped lang="scss">
-@import "../styles/variables.scss";
-
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-}
-
-h1 {
-  font-size: 7.5rem;
-  color: $title-color;
-}
-
-p {
-  color: $text-color;
-}
-
-.link--container {
-  margin-top: 1rem;
-
-  a {
-    margin: 0.5rem;
-    padding: 1rem;
-    line-height: 1;
-    display: inline-block;
-    background-color: rgb(240, 240, 240);
-    border-radius: 0.5rem;
-  }
-}
+@use "../styles/pages/notFound";
 </style>

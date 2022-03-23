@@ -18,7 +18,7 @@ const props = defineProps<{ label?: string }>();
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/variables.scss";
+@use "../styles/abstracts/variables" as *;
 
 section {
   padding-top: 2rem;
@@ -28,11 +28,11 @@ section {
 .breadcrumbs {
   display: flex;
   align-items: center;
-  color: $title-color;
+  color: $clr-neutral-800;
 
   a {
     font-weight: 600;
-    color: $secondary-color;
+    color: $clr-secondary-400;
 
     &:hover + svg {
       transform: rotate(180deg);
@@ -48,7 +48,7 @@ section {
 }
 
 h2 {
-  color: $title-color;
+  color: $clr-neutral-800;
   line-height: 1;
   padding-top: 0.5rem;
 }
