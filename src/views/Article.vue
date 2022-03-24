@@ -27,7 +27,7 @@ if (!article) router.push({ name: "404" });
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/variables.scss";
+@use "../styles/abstracts/variables" as *;
 
 .breadcrumbs--subtitle {
   margin-top: 1.5rem;

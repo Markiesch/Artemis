@@ -25,34 +25,6 @@
 import Breadcrumbs from "../components/Breadcrumbs.vue";
 </script>
 
-<style lang="scss" scoped>
-@import "../styles/abstracts/variables";
-@import "../styles/abstracts/mixins";
-
-img {
-  width: 100%;
-  max-height: 30rem;
-  object-fit: cover;
-  display: block;
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-
-div {
-  background-color: rgb(248, 248, 248);
-  padding: 2.5rem;
-  border-radius: 0 0 0.5rem 0.5rem;
-
-  @include tablet {
-    padding: 1rem;
-  }
-}
-
-p {
-  line-height: 1.6;
-  color: $clr-neutral-800;
-}
-
-p + p {
-  padding-top: 1rem;
-}
+<style scoped lang="scss">
+@use "../styles/pages/about";
 </style>
