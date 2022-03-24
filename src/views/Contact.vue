@@ -8,7 +8,7 @@
   <section class="form--section">
     <Row>
       <article>
-        <h2 class="section--title">Neem contact op</h2>
+        <h2 class="section__title">Neem contact op</h2>
         <p>Artemis</p>
         <p>Onderwijsboulevard 3</p>
         <p>5223 DE 's-Hertogenbosch</p>

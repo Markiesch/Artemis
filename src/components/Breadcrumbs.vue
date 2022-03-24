@@ -8,7 +8,7 @@
       <span v-if="props.label">{{ props.label }}</span>
       <span v-else><slot /></span>
     </div>
-    <h2 class="section--title"><slot /></h2>
+    <h2 class="section__title"><slot /></h2>
     <slot name="subtitle" />
   </section>
 </template>

@@ -6,7 +6,7 @@
         <p class="hero--subtitle">Ieder dier in nood is welkom in onze opvang. Wij vinden dat ieder dier geholpen moet worden, ongeacht waar het dier geboren is, een ziekte of handicap heeft.</p>
         <router-link :to="{ name: 'Donate' }">Verander nu een leven</router-link>
       </article>
-  <article>
+      <article>
         <div>
           <img src="/assets/hero1.jpg" alt="" />
         </div>
@@ -23,7 +23,7 @@
   <section class="donate--section">
     <Row>
       <article class="donate--information">
-        <h2 class="large--section--title">Samen maken wij het verschil</h2>
+        <h2 class="large--section__title">Samen maken wij het verschil</h2>
         <p>
           Door een bijdrage, klein of groot, maakt u het ons mogelijk om dieren op te vangen in de regio Den Bosch. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium commodi sed
           alias ipsa dignissimos excepturi similique voluptate. Eum, ducimus. Help mee en wordt donateur!
@@ -47,7 +47,7 @@
   </section>
 
   <section class="news--section">
-    <h2 class="section--title">Laatste nieuws</h2>
+    <h2 class="section__title">Laatste nieuws</h2>
     <ArticleList :articles="articles.slice(0, 3)" />
   </section>
 
@@ -68,7 +68,7 @@
   <section class="about--section">
     <Row align="center">
       <article>
-        <h2 class="section--title">Over ons</h2>
+        <h2 class="section__title">Over ons</h2>
         <p>
           Artemis dierenopvang is een opvang waar in principe ieder dier in nood welkom is. Onze organisatie richt zich voornamelijk op huisdieren en wij zijn in regio Den Bosch de opvang met de
           meeste huisdieren. Wij werken vanuit de gedachte dat ieder dier die hulp nodig heeft geholpen moet worden ongeacht waar het dier geboren is, een ziekte of handicap heeft of dat de eigenaar

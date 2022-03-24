@@ -1,6 +1,6 @@
 <template>
   <section class="donate--section">
-    <h1 class="large--section--title">Wij willen samen met u het verschil maken</h1>
+    <h1 class="large--section__title">Wij willen samen met u het verschil maken</h1>
     <p>
       Door een bijdrage, klein of groot, maakt u het ons mogelijk om dieren op te vangen in de regio Den Bosch. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium commodi sed
       alias ipsa dignissimos excepturi similique voluptate. Eum, ducimus.
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="last-step" :class="{ show: showLastStep }">
-      <h2 class="large--section--title">Nog één laatste stap</h2>
+      <h2 class="large--section__title">Nog één laatste stap</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam accusantium sit illo dolore tempore reprehenderit, sed vero commodi, quasi maxime nulla iure. A dolore harum ipsum omnis, autem
         aperiam tenetur?
@@ -52,7 +52,7 @@
     <Row>
       <!-- Latest donators -->
       <article class="donate--information">
-        <h2 class="large--section--title">Donateurs die u voor waren</h2>
+        <h2 class="large--section__title">Donateurs die u voor waren</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, adipisci excepturi a porro hic ipsam incidunt soluta consequuntur iusto perspiciatis, quis saepe nihil. Ipsum officiis
           excepturi sint quisquam, libero numquam.

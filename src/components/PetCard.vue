@@ -3,7 +3,7 @@
     <img class="card__image" :src="`/assets/pets/${pet.image}`" :alt="pet.name" />
     <div class="card__overlay">
       <p class="breed">{{ pet.breed }}</p>
-      <h2 class="section--title">{{ pet.name }}</h2>
+      <h2 class="section__title">{{ pet.name }}</h2>
       <p>{{ pet.gender }} - {{ pet.size }} - {{ pet.color }}</p>
     </div>
   </div>
@@ -21,9 +21,15 @@ defineProps<{ pet: IPet }>();
 $card-padding: 1.5rem;
 
 .card {
-  position: relative;
+  display: grid;
   border-radius: 0.5rem;
   overflow: hidden;
+
+  &__image,
+  &__overlay {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
 
   &__image {
     width: 100%;
@@ -33,12 +39,7 @@ $card-padding: 1.5rem;
   }
 
   &__overlay {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
-    position: absolute;
     color: white;
     flex-direction: column;
     justify-content: flex-end;

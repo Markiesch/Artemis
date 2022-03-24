@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as *;
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.filter__container {
+  padding-right: 3rem;
+  min-width: 12.5rem;
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+
+  button {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
+
+    text-align: left;
+    line-height: 1;
+    font-weight: 500;
+    background-color: white;
+    cursor: pointer;
+
+    transition: background-color 100ms ease, border-color 100ms ease;
+    border: 1px solid $clr-neutral-200;
+    border-radius: 0.25rem;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      border: 1px solid rgba(black, 0.8);
+    }
+  }
+
+  .active {
+    background-color: $clr-primary-400;
+    border-color: $clr-primary-400;
+    color: white;
+  }
+}
+
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  margin: -0.75rem;
+
+  .card {
+    margin: 0.75rem;
+  }
+}
