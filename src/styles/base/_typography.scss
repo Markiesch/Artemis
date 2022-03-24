@@ -11,10 +11,11 @@
 }
 
 .section__title {
+  color: $clr-neutral-800;
   font-size: $fontsize-700;
 }
 
-.large--section__title {
+.section__title--large {
   font-size: $fontsize-800;
 }
 

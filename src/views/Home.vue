@@ -23,7 +23,7 @@
   <section class="donate--section">
     <Row>
       <article class="donate--information">
-        <h2 class="large--section__title">Samen maken wij het verschil</h2>
+        <h2 class="section__title--large">Samen maken wij het verschil</h2>
         <p>
           Door een bijdrage, klein of groot, maakt u het ons mogelijk om dieren op te vangen in de regio Den Bosch. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium commodi sed
           alias ipsa dignissimos excepturi similique voluptate. Eum, ducimus. Help mee en wordt donateur!
