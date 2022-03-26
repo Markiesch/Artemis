@@ -16,13 +16,6 @@ import Footer from "./components/Footer.vue";
 @use "./styles/base/typography";
 @use "./styles/base/reset";
 
-// Donate slider styling
-$themeColor: $clr-primary-400;
-$tooltipFontSize: 1.25rem;
-$tooltipPadding: 0.3em 0.75em;
-$tooltipArrow: 1rem;
-@import "vue-slider-component/lib/theme/default.scss";
-
 body {
   min-height: 100vh;
   display: grid;

@@ -16,7 +16,7 @@
       </svg>
     </div>
 
-    <VueSlider class="range-slider" v-model="amount" tooltip-formatter="&euro;{value}" tooltip="always" :min="1" :max="300" />
+    <RangeSlider :min="1" :max="300" v-model="amount" />
     <div class="selection__container">
       <button type="button" class="selection__item" :class="{ 'selection__item--active': amount == 15 }" @click="amount = 15">&euro;15</button>
       <button type="button" class="selection__item" :class="{ 'selection__item--active': amount == 30 }" @click="amount = 30">&euro;30</button>
@@ -89,7 +89,7 @@
 </template>
 
 <script setup lang="ts">
-import VueSlider from "vue-slider-component";
+import RangeSlider from "../components/RangeSlider.vue";
 import { ref, watch } from "vue";
 import { addDonation, donations, getTotal, getPercentage } from "../data/donations";
 import Row from "../components/Row.vue";
