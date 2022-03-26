@@ -18,9 +18,9 @@
     <div class="link--container outer--link">
       <router-link :to="{ name: 'Donate' }">Doneren</router-link>
     </div>
-    <div @click="toggleMenu" class="menu--icon__container">
+    <button @click="toggleMenu" class="menu--icon__container">
       <span class="menu--icon"></span>
-    </div>
+    </button>
   </nav>
   <div class="menu--container" :class="{ open: showMenu }" @click="toggleMenu">
     <div class="menu">

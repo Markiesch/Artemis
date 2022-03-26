@@ -46,11 +46,13 @@ nav {
   width: 4rem;
   height: 4rem;
   display: none;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
 
   @include tablet {
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -61,11 +63,10 @@ nav {
 .menu--icon,
 .menu--icon::before,
 .menu--icon::after {
-  background-color: $clr-neutral-800;
-  width: 2.5rem;
   height: 3px;
   border-radius: 0.25rem;
-  transition: transform 600ms ease;
+  width: 2.5rem;
+  background-color: $clr-neutral-800;
 }
 
 .menu--icon::before,
@@ -76,11 +77,13 @@ nav {
 }
 
 .menu--icon::before {
+  left: 0;
   transform: translateY(-10px);
 }
 
 .menu--icon::after {
-  transform: translateY(10px) translateX(0.75rem);
+  right: 0;
+  transform: translateY(10px);
 }
 
 .menu--container {
