@@ -18,7 +18,7 @@
     <div class="link--container outer--link">
       <router-link :to="{ name: 'Donate' }">Doneren</router-link>
     </div>
-    <button @click="toggleMenu" class="menu--icon__container">
+    <button aria-label="menu" type="button" @click="toggleMenu" class="menu--icon__container">
       <span class="menu--icon"></span>
     </button>
   </nav>
