@@ -1,6 +1,6 @@
 <template>
   <section class="donate__section">
-    <h1 class="section__title--large">Wij willen samen met u het verschil maken</h1>
+    <h1 class="section__title--large">Wij kunnen samen met u het verschil maken</h1>
     <p>
       Door een bijdrage, klein of groot, maakt u het ons mogelijk om dieren op te vangen in de regio Den Bosch. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium commodi sed
       alias ipsa dignissimos excepturi similique voluptate. Eum, ducimus.
@@ -18,9 +18,9 @@
 
     <VueSlider class="range-slider" v-model="amount" tooltip-formatter="&euro;{value}" tooltip="always" :min="1" :max="300" />
     <div class="selection__container">
-      <button class="selection__item" :class="{ 'selection__item--active': amount == 15 }" @click="amount = 15">&euro;15</button>
-      <button class="selection__item" :class="{ 'selection__item--active': amount == 30 }" @click="amount = 30">&euro;30</button>
-      <button class="selection__item" :class="{ 'selection__item--active': amount == 100 }" @click="amount = 100">&euro;100</button>
+      <button type="button" class="selection__item" :class="{ 'selection__item--active': amount == 15 }" @click="amount = 15">&euro;15</button>
+      <button type="button" class="selection__item" :class="{ 'selection__item--active': amount == 30 }" @click="amount = 30">&euro;30</button>
+      <button type="button" class="selection__item" :class="{ 'selection__item--active': amount == 100 }" @click="amount = 100">&euro;100</button>
       <div class="selection__item">
         <span>&euro;</span>
         <input min="1" type="number" v-model="amount" />
@@ -45,7 +45,7 @@
       </form>
     </div>
     <p v-if="showFeedbackMessage">Bedankt voor uw donatie!</p>
-    <button class="donate__button" @click="donate">Doneer &euro;{{ amount }}</button>
+    <button type="submit" class="donate__button" @click="donate">Doneer &euro;{{ amount }}</button>
   </section>
 
   <section class="stats__section">
@@ -72,7 +72,7 @@
           <p class="amount">&euro;{{ donation.amount }}</p>
         </div>
         <i v-if="showAllDonators"><button @click="showAllDonators = !showAllDonators">toon laatste 5</button></i>
-        <i v-else>en {{ donations.length - 5 }} andere - <button @click="showAllDonators = !showAllDonators">toon alle donateurs</button></i>
+        <i v-else>en {{ donations.length - 5 }} andere - <button type="button" @click="showAllDonators = !showAllDonators">toon alle donateurs</button></i>
       </div>
 
       <div class="donate--stats">

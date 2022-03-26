@@ -43,7 +43,7 @@
           <label for="news">Nieuwsbrief ontvangen</label>
         </div>
 
-        <button @click="validateForm">Versturen</button>
+        <button type="submit" @click="validateForm">Versturen</button>
       </form>
     </Row>
   </section>
