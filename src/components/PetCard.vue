@@ -1,12 +1,12 @@
 <template>
-  <div class="card">
+  <article class="card">
     <img class="card__image" :src="`/assets/pets/${pet.image}`" :alt="pet.name" />
     <div class="card__overlay">
       <p class="breed">{{ pet.breed }}</p>
       <h2 class="section__title">{{ pet.name }}</h2>
       <p>{{ pet.gender }} - {{ pet.size }} - {{ pet.color }}</p>
     </div>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">
@@ -54,6 +54,10 @@ $card-padding: 1.5rem;
   &:hover &__overlay {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  h2 {
+    color: white;
   }
 
   p {

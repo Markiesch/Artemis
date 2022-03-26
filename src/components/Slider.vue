@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="controller--container">
-    <span v-for="(_, index) in items" :class="{ active: index === sliderIndex }" @click="setSliderIndex(index)"></span>
+    <button type="button" v-for="(_, index) in items" :class="{ active: index === sliderIndex }" @click="setSliderIndex(index)"></button>
   </div>
 </template>
 
@@ -58,13 +58,13 @@ createInterval();
   display: flex;
   justify-content: center;
 
-  span {
+  button {
+    border: none;
     width: 1rem;
     height: 1rem;
     margin: 1rem 0.25rem;
     background-color: $clr-secondary-100;
     border-radius: 50%;
-    cursor: pointer;
     transition: background-color 300ms ease;
   }
 
