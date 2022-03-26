@@ -93,6 +93,11 @@ nav {
   bottom: 0;
   background-color: transparent;
   transition: background-color 300ms ease;
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
 }
 
 .open {
