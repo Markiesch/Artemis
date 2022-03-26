@@ -6,7 +6,7 @@
     <div class="label__container" :style="`left: ${modelValue / (max / 100)}%`">
       <label for="slider">{{ modelValue }}</label>
     </div>
-    <input v-model="modelValue" type="range" :min="min" :max="max" id="slider" @input="updateValue(modelValue)" />
+    <input type="range" :min="min" :max="max" id="slider" :value="modelValue" @input="updateValue" />
   </div>
 </template>
 
@@ -14,8 +14,8 @@
 defineProps<{ min: number; max: number; modelValue: number }>();
 const emit = defineEmits(["update:modelValue"]);
 
-function updateValue(value: number) {
-  emit("update:modelValue", +value);
+function updateValue(event: any) {
+  emit("update:modelValue", +event.target.value);
 }
 </script>
 
