@@ -59,7 +59,7 @@
         </article>
         <article>
           <input placeholder="Email adres" type="text" v-model="emailInput" />
-          <button @click="sendMail">Abonneer</button>
+          <button type="submit" @click="sendMail">Abonneer</button>
         </article>
       </Row>
     </section>

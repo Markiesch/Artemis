@@ -1,19 +1,27 @@
 <template>
   <div class="slider--container">
     <div :style="`transform: translateX(-${sliderIndex * 100}%)`" class="slider">
-      <img v-for="item in items" width="1440" height="200" :src="`assets/${item}.jpg`" :alt="item" />
+      <img v-for="item in items" width="1440" height="200" :src="`assets/${item.image}.jpg`" :alt="item.alt" />
     </div>
   </div>
   <div class="controller--container">
-    <button type="button" v-for="(_, index) in items" :class="{ active: index === sliderIndex }" @click="setSliderIndex(index)"></button>
+    <button :aria-label="`naar slide ${index + 1}`" type="button" v-for="(_, index) in items" :class="{ active: index === sliderIndex }" @click="setSliderIndex(index)"></button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 
-const items = ["slider1", "slider2", "slider3"];
+interface IItem {
+  image: string;
+  alt: string;
+}
 
+const items: IItem[] = [
+  { image: "slider1", alt: "duitse herder" },
+  { image: "slider2", alt: "twee honden die weg kijken" },
+  { image: "slider3", alt: "twee blije rennende honden" },
+];
 let interval: number;
 let sliderIndex = ref(0);
 

@@ -3,7 +3,7 @@
   <section class="container">
     <div class="filter__container">
       <h2>Filters</h2>
-      <button v-for="filter in filters()" :class="{ active: selectedFilters.includes(filter) }" @click="toggleFilter(filter)">{{ filter }}</button>
+      <button v-for="filter in filters()" :class="{ active: selectedFilters.includes(filter) }" @click="toggleFilter(filter)" type="button" :aria-label="`filter op ${filter}`">{{ filter }}</button>
     </div>
     <div class="card__container">
       <PetCard class="card" v-for="pet in filteredPets()" :pet="pet" />
