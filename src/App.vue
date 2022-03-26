@@ -13,21 +13,15 @@ import Footer from "./components/Footer.vue";
 
 <style lang="scss">
 @use "./styles/abstracts/variables" as *;
-@use "./styles/abstracts/mixins" as *;
 @use "./styles/base/typography";
+@use "./styles/base/reset";
 
+// Donate slider styling
 $themeColor: $clr-primary-400;
 $tooltipFontSize: 1.25rem;
 $tooltipPadding: 0.3em 0.75em;
 $tooltipArrow: 1rem;
 @import "vue-slider-component/lib/theme/default.scss";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 
 body {
   min-height: 100vh;
@@ -50,10 +44,5 @@ footer {
   width: 90%;
   max-width: 90rem;
   margin: 0 auto;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 </style>
