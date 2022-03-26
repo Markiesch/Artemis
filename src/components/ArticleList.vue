@@ -37,11 +37,10 @@ defineProps<{ articles: IArticle[] }>();
   grid-template-rows: auto 1fr;
 
   &__image {
-    border-radius: 0.5rem 0.5rem 0 0;
     width: 100%;
-    display: block;
     max-height: 15rem;
     object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
   }
 
   &__details {
