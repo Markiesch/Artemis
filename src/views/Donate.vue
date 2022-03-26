@@ -22,8 +22,8 @@
       <button type="button" class="selection__item" :class="{ 'selection__item--active': amount == 30 }" @click="amount = 30">&euro;30</button>
       <button type="button" class="selection__item" :class="{ 'selection__item--active': amount == 100 }" @click="amount = 100">&euro;100</button>
       <div class="selection__item">
-        <span>&euro;</span>
-        <input min="1" type="number" v-model="amount" />
+        <label for="amount">&euro;</label>
+        <input min="1" type="number" id="amount" v-model="amount" />
       </div>
     </div>
     <div class="form__container" :class="{ show: showLastStep }">
