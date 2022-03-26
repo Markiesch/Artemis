@@ -1,22 +1,21 @@
 <template>
-  <div @mouseover="focus" class="range-slider">
+  <div class="range-slider">
     <div class="slider__background--active" :style="`width: ${modelValue / (max / 100)}%`"></div>
     <div class="slider__background"></div>
     <div class="thomb" :style="`left: ${modelValue / (max / 100)}%`"></div>
-    <input v-model="modelValue" type="range" :min="min" :max="max" class="slider" @input="updateValue" />
+    <div class="label__container" :style="`left: ${modelValue / (max / 100)}%`">
+      <label for="slider">{{ modelValue }}</label>
+    </div>
+    <input v-model="modelValue" type="range" :min="min" :max="max" id="slider" @input="updateValue(modelValue)" />
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ min: number; max: number; modelValue: number }>();
+defineProps<{ min: number; max: number; modelValue: number }>();
 const emit = defineEmits(["update:modelValue"]);
 
-function updateValue() {
-  emit("update:modelValue", +props.modelValue);
-}
-
-function focus() {
-  window.blur();
+function updateValue(value: number) {
+  emit("update:modelValue", +value);
 }
 </script>
 
@@ -49,7 +48,8 @@ input {
 }
 
 .slider__background--active,
-.thomb {
+.thomb,
+.label__container {
   transition: 100ms ease-in-out;
   transition-property: left width;
 }
@@ -72,5 +72,16 @@ input {
 
 .slider__background--active {
   background-color: $clr-primary-400;
+}
+
+.label__container {
+  position: absolute;
+  bottom: 150%;
+  padding: 0.75rem;
+  background-color: $clr-primary-400;
+  color: white;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+  font-weight: 600;
 }
 </style>
