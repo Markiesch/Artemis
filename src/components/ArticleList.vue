@@ -1,7 +1,7 @@
 <template>
   <div class="card__container">
     <article class="card" v-for="article of articles">
-      <img class="card__image" :src="`/assets/news/${article.image}`" :alt="article.title" />
+      <img class="card__image" width="500" height="250" :src="`/assets/news/${article.image}`" :alt="article.title" />
       <div class="card__details">
         <p class="card__details__date">{{ article.date }}</p>
         <h2 class="card__details__title">{{ article.title }}</h2>
@@ -38,9 +38,9 @@ defineProps<{ articles: IArticle[] }>();
 
   &__image {
     width: 100%;
-    max-height: 15rem;
-    object-fit: cover;
+    height: auto;
     border-radius: 0.5rem 0.5rem 0 0;
+    background-color: #f5f5f5;
   }
 
   &__details {
@@ -55,7 +55,7 @@ defineProps<{ articles: IArticle[] }>();
       margin-bottom: 1rem;
       width: max-content;
       padding: 0.75rem;
-      background-color: rgb(245, 245, 245);
+      background-color: #f5f5f5;
       color: $clr-neutral-800;
       line-height: 1;
       border-radius: 0.25rem;
