@@ -1,7 +1,7 @@
 <template>
   <Breadcrumbs>Over ons</Breadcrumbs>
   <section>
-    <img src="/assets/about.jpg" alt="Over ons" />
+    <img src="/assets/about.jpg" width="1440" height="960" alt="Over ons" />
     <div>
       <p>
         Artemis dierenopvang is een opvang waar in principe ieder dier in nood welkom is. Onze organisatie richt zich voornamelijk op huisdieren en wij zijn in regio Den Bosch de opvang met de meeste

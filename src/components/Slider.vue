@@ -1,7 +1,7 @@
 <template>
   <div class="slider--container">
     <div :style="`transform: translateX(-${sliderIndex * 100}%)`" class="slider">
-      <img v-for="item in items" width="1440" height="200" :src="`assets/${item.image}.jpg`" :alt="item.alt" />
+      <Image v-for="item in items" width="1440" height="200" :src="item.image" :alt="item.alt" />
     </div>
   </div>
   <div class="controller--container">
@@ -11,6 +11,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import Image from "./Image.vue";
 
 interface IItem {
   image: string;
@@ -52,13 +53,11 @@ createInterval();
     transition: transform 300ms ease;
   }
 
-  img {
+  picture {
     flex: 1 0 100%;
     width: 100%;
     height: auto;
-    display: block;
     max-height: 40rem;
-    object-fit: cover;
   }
 }
 

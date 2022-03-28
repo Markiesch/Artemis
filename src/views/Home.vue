@@ -8,13 +8,13 @@
       </article>
       <article>
         <div>
-          <img src="/assets/hero1.jpg" alt="" />
+          <Image src="hero1" alt="" />
         </div>
         <div>
-          <img src="/assets/hero2.jpg" alt="" />
+          <Image src="hero2" alt="" />
         </div>
         <div>
-          <img src="/assets/hero3.jpg" alt="" />
+          <Image src="hero3" alt="" />
         </div>
       </article>
     </Row>
@@ -86,7 +86,7 @@
         <p>Omdat ieder dier een tweede kans verdient!</p>
       </article>
       <article>
-        <img src="/assets/about2.jpg" alt="Hond met baasje kijken naar dalgebied" />
+        <Image width="600" height="900" src="about2" alt="Hond met baasje kijken naar dalgebied" />
       </article>
     </Row>
   </section>
@@ -96,6 +96,7 @@
 import { ref } from "vue";
 import { articles } from "../data/articles";
 import { donations, getTotal, getPercentage } from "../data/donations";
+import Image from "../components/Image.vue";
 import Slider from "../components/Slider.vue";
 import Row from "../components/Row.vue";
 import ArticleList from "../components/ArticleList.vue";

@@ -206,11 +206,11 @@
     padding-left: 10rem;
   }
 
-  img {
+  picture {
     width: 100%;
-    height: 100%;
+    height: auto;
+    overflow: hidden;
     object-fit: cover;
-    display: block;
     border-radius: 0.25rem;
   }
 }

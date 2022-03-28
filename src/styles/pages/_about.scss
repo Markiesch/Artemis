@@ -3,9 +3,11 @@
 
 img {
   width: 100%;
+  height: auto;
   max-height: 30rem;
   object-fit: cover;
   display: block;
+  background-color: #f5f5f5;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
