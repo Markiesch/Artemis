@@ -1,6 +1,6 @@
 <div align="center">
     <a href="https://kw1c-artemis.netlify.app/">
-        <img src="public/logo.png" alt="Logo" width="80" height="80" />
+        <img src="public/favicon.ico" alt="Logo" width="80" height="80" />
     </a>
     <h1>Artemis - Front end</h1>
     <p></p>
